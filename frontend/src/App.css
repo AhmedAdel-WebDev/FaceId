@@ -1,0 +1,47 @@
+/* Remove default Vite styles */
+/*
+#root { ... }
+.logo { ... }
+.logo:hover { ... }
+.logo.react:hover { ... }
+@keyframes logo-spin { ... }
+@media (prefers-reduced-motion: no-preference) { ... }
+.card { ... }
+.read-the-docs { ... }
+*/
+
+/* Import a modern font (e.g., Inter) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* Ensure HTML, Body, and Root take full width */
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100vh; /* Ensure they cover viewport height too */
+  margin: 0; /* Redundant with reset but explicit */
+  padding: 0; /* Redundant with reset but explicit */
+}
+
+
+/* Basic Reset & Font */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  /* Use the imported font */
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  /* Dark Mode: Base text color */
+  color: #cbd5e0; /* Lighter gray for text */
+  /* Dark Mode: Base background */
+  background-color: #1a202c; /* Dark slate */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Keep any other truly global styles here if needed */
+/* All landing page specific styles have been moved to LandingPage.module.css */

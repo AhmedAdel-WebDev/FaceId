@@ -1,0 +1,390 @@
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.modalContent {
+    background: linear-gradient(145deg, #2d3748, #1a202c);
+    color: #e2e8f0;
+    padding: 2.5rem;
+    border-radius: 16px;
+    border: 1px solid rgba(74, 85, 104, 0.4);
+    max-width: 650px;
+    width: 90%;
+    position: relative;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    max-height: 85vh;
+    overflow-y: auto;
+    animation: slideIn 0.3s ease-out;
+    scrollbar-width: thin;
+    scrollbar-color: #4a5568 #1a202c;
+}
+
+.modalContent::-webkit-scrollbar {
+    width: 8px;
+}
+
+.modalContent::-webkit-scrollbar-track {
+    background: #1a202c;
+    border-radius: 8px;
+}
+
+.modalContent::-webkit-scrollbar-thumb {
+    background-color: #4a5568;
+    border-radius: 8px;
+}
+
+.closeButton {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: rgba(74, 85, 104, 0.3);
+    border: none;
+    font-size: 1.8rem;
+    color: #cbd5e0;
+    cursor: pointer;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+}
+
+.closeButton:hover {
+    color: #fff;
+    background: rgba(74, 85, 104, 0.6);
+    transform: rotate(90deg);
+}
+
+.modalTitle {
+    margin-top: 0;
+    margin-bottom: 2rem;
+    color: #90cdf4;
+    border-bottom: 2px solid #4299e1;
+    padding-bottom: 0.8rem;
+    font-size: 1.8rem;
+    letter-spacing: 0.5px;
+}
+
+.detailItem {
+    margin-bottom: 1.8rem;
+    position: relative;
+}
+
+.detailItem:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    bottom: -0.9rem;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(74, 85, 104, 0.2), rgba(74, 85, 104, 0.6), rgba(74, 85, 104, 0.2));
+}
+
+.detailItem strong {
+    color: #63b3ed;
+    margin-right: 0.5rem;
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.descriptionText {
+    background-color: rgba(26, 32, 44, 0.6);
+    padding: 1.2rem;
+    border-radius: 8px;
+    border: 1px solid rgba(74, 85, 104, 0.5);
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    max-height: 250px;
+    overflow-y: auto;
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    line-height: 1.6;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+    color: #e2e8f0;
+}
+
+.cvLink {
+    color: #4299e1;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    background-color: rgba(66, 153, 225, 0.1);
+    border: 1px solid rgba(66, 153, 225, 0.3);
+    border-radius: 6px;
+    transition: all 0.2s ease;
+    margin-top: 0.5rem;
+}
+
+.cvLink:hover {
+    background-color: rgba(66, 153, 225, 0.2);
+    border-color: rgba(66, 153, 225, 0.5);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.cvLink::before {
+    content: '📄 ';
+    margin-right: 5px;
+}
+
+/* Structured description styles */
+.structuredDescription {
+    background-color: rgba(26, 32, 44, 0.6);
+    padding: 1.5rem;
+    border-radius: 10px;
+    border: 1px solid rgba(74, 85, 104, 0.5);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.detailField {
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.detailField:last-child {
+    margin-bottom: 0;
+}
+
+.detailField strong {
+    color: #90cdf4;
+    display: block;
+    margin-bottom: 0.6rem;
+    font-size: 1.05rem;
+    letter-spacing: 0.5px;
+}
+
+.detailField p {
+    margin: 0.5rem 0;
+    white-space: pre-wrap;
+    line-height: 1.6;
+    color: #e2e8f0;
+}
+
+.pointsList {
+    margin: 0.8rem 0;
+    padding-left: 1.8rem;
+    list-style-type: none;
+}
+
+.pointsList li {
+    margin-bottom: 0.8rem;
+    position: relative;
+    line-height: 1.5;
+}
+
+.pointsList li::before {
+    content: '•';
+    color: #4299e1;
+    position: absolute;
+    left: -1.2rem;
+    font-size: 1.2rem;
+}
+
+.socialLinks {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    background-color: rgba(26, 32, 44, 0.3);
+    padding: 1rem;
+    border-radius: 6px;
+}
+
+.socialLinks div {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(74, 85, 104, 0.2);
+}
+
+.socialLinks div:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.socialLinks strong {
+    display: inline-block;
+    margin-bottom: 0;
+    min-width: 90px;
+    font-size: 0.9rem;
+    color: #a0aec0;
+}
+
+/* Medium screen adjustments */
+@media (max-width: 768px) {
+    .modalContent {
+        padding: 2rem;
+        width: 95%;
+        max-height: 80vh;
+    }
+    
+    .modalTitle {
+        font-size: 1.6rem;
+    }
+}
+
+/* Small screen adjustments */
+@media (max-width: 480px) {
+    .modalContent {
+        padding: 1.5rem;
+        border-radius: 12px;
+        max-height: 85vh;
+    }
+    
+    .closeButton {
+        top: 10px;
+        right: 15px;
+        width: 32px;
+        height: 32px;
+        font-size: 1.5rem;
+    }
+    
+    .modalTitle {
+        font-size: 1.4rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .detailItem strong {
+        font-size: 1rem;
+    }
+    
+    .descriptionText {
+        padding: 1rem;
+        max-height: 200px;
+        font-size: 0.95rem;
+    }
+}
+
+.candidateInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.8rem;
+    background-color: rgba(26, 32, 44, 0.4);
+    border-radius: 8px;
+    border: 1px solid rgba(74, 85, 104, 0.3);
+}
+
+.candidateName {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #fff;
+}
+
+.candidateEmail {
+    font-size: 0.95rem;
+    color: #a0aec0;
+    font-style: italic;
+}
+
+.noCv {
+    display: inline-block;
+    padding: 0.6rem 1rem;
+    background-color: rgba(113, 128, 150, 0.1);
+    border: 1px solid rgba(113, 128, 150, 0.3);
+    border-radius: 6px;
+    color: #a0aec0;
+    font-style: italic;
+    margin-top: 0.5rem;
+}
+
+/* Social link styles */
+.socialLinks a {
+    color: #63b3ed;
+    text-decoration: none;
+    transition: color 0.2s ease;
+    word-break: break-all;
+}
+
+.socialLinks a:hover {
+    color: #90cdf4;
+    text-decoration: underline;
+}
+
+/* RTL Support for Candidate Application Details */
+:global(html[dir="rtl"]) .modalContent {
+  text-align: right;
+}
+
+:global(html[dir="rtl"]) .modalTitle {
+  text-align: right;
+}
+
+:global(html[dir="rtl"]) .modalTitle::after {
+  left: auto;
+  right: 0;
+  width: 100%;
+}
+
+:global(html[dir="rtl"]) .detailItem {
+  text-align: right;
+}
+
+:global(html[dir="rtl"]) .detailItem strong {
+  display: block;
+  text-align: right;
+}
+
+:global(html[dir="rtl"]) .pointsList {
+  padding-left: 0;
+  padding-right: 1.8rem;
+}
+
+:global(html[dir="rtl"]) .pointsList li::before {
+  left: auto;
+  right: -1.2rem;
+}
+
+:global(html[dir="rtl"]) .socialLinks {
+  text-align: right;
+}
+
+:global(html[dir="rtl"]) .socialLinks div {
+  flex-direction: row-reverse;
+}
+
+:global(html[dir="rtl"]) .candidateInfo {
+  text-align: right;
+}
+
+:global(html[dir="rtl"]) .cvLink::before {
+  margin-right: 0;
+  margin-left: 5px;
+}
+
+/* Mobile RTL adjustments */
+@media (max-width: 480px) {
+  :global(html[dir="rtl"]) .closeButton {
+    right: auto;
+    left: 15px;
+  }
+}

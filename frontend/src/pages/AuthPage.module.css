@@ -1,0 +1,68 @@
+/* Styles for Login and Register page containers */
+.pageContainer {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #1a202c 0%, #2d3748 100%); /* Dark gradient background */
+}
+
+.mainContent {
+  flex-grow: 1; /* Takes available space */
+  display: flex; /* Enable flex for centering */
+  justify-content: center; /* Center form horizontally */
+  align-items: center; /* Center form vertically */
+  padding: 3rem 5%; /* Add padding */
+}
+
+.formWrapper {
+    width: 100%;
+    max-width: 500px; /* Max width for the content area around the form */
+    text-align: center; /* Center title and subtitle */
+}
+
+.title {
+    color: #e2e8f0; /* Light gray */
+    margin-bottom: 0.5rem;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.subtitle {
+    color: #a0aec0; /* Medium gray */
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+.linkText {
+    margin-top: 1.5rem;
+    color: #cbd5e0; /* Lighter gray */
+    font-size: 0.95rem;
+}
+
+.linkText a {
+    color: #63b3ed; /* Light blue */
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.linkText a:hover {
+    text-decoration: underline;
+}
+
+/* --- NEW: Responsive adjustments --- */
+@media (max-width: 480px) {
+    .mainContent {
+        padding: 2rem 5%; /* Adjust padding */
+    }
+    .title {
+        font-size: 1.8rem;
+    }
+    .subtitle {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+    .linkText {
+        font-size: 0.9rem;
+    }
+}
+/* --- END NEW --- */

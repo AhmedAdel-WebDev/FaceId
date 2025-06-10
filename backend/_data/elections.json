@@ -1,0 +1,60 @@
+[
+  {
+    "title": "Student Council President Election",
+    "description": "Annual election for the position of Student Council President for the 2023-2026 academic years.",
+    "thumbnail": "https://images.unsplash.com/photo-1494172961521-33799ddd43a5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+    "startDate": "2023-11-01T00:00:00.000Z",
+    "endDate": "2026-11-15T23:59:59.000Z",
+    "status": "active",
+    "candidates": [
+      {
+        "email": "candidate1@example.com",
+        "applicationDescription": "I promise to improve campus facilities and organize more student events.",
+        "cvPath": "/uploads/cvs/sample-cv-1.pdf"
+      },
+      {
+        "email": "candidate2@example.com",
+        "applicationDescription": "My focus will be on academic excellence and student welfare programs.",
+        "cvPath": "/uploads/cvs/sample-cv-2.pdf"
+      }
+    ],
+    "applications": []
+  },
+  {
+    "title": "Department Representative Election",
+    "description": "Election for Computer Science Department Student Representative.",
+    "thumbnail": "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+    "startDate": "2023-12-01T00:00:00.000Z",
+    "endDate": "2026-12-15T23:59:59.000Z",
+    "status": "active",
+    "candidates": [
+      {
+        "email": "candidate1@example.com",
+        "applicationDescription": "I want to bridge the gap between students and faculty in our department.",
+        "cvPath": "/uploads/cvs/sample-cv-4.pdf"
+      },
+      {
+        "email": "candidate2@example.com",
+        "applicationDescription": "I plan to organize more technical workshops and industry connections.",
+        "cvPath": "/uploads/cvs/sample-cv-5.pdf"
+      }
+    ],
+    "applications": []
+  },
+  {
+    "title": "Student Union Treasurer",
+    "description": "Election for the position of Treasurer in the Student Union.",
+    "thumbnail": "https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+    "startDate": "2023-10-15T00:00:00.000Z",
+    "endDate": "2026-10-30T23:59:59.000Z",
+    "status": "active",
+    "candidates": [
+      {
+        "email": "candidate3@example.com",
+        "applicationDescription": "I have experience in finance and budgeting for student organizations.",
+        "cvPath": "/uploads/cvs/sample-cv-6.pdf"
+      }
+    ],
+    "applications": []
+  }
+]

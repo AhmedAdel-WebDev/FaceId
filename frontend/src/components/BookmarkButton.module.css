@@ -1,0 +1,43 @@
+/* BookmarkButton styles - reusable button for bookmarked links */
+.bookmarkButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #4299e1; /* Blue to match other buttons */
+  color: #ffffff; /* White text for better contrast */
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.bookmarkButton::before {
+  content: "★"; /* Star symbol */
+  font-size: 1.2rem;
+  color: #f6e05e; /* Gold color for star */
+}
+
+.bookmarkButton:hover {
+  background-color: #2c5282; /* Darker blue for better contrast */
+  color: #ffffff; /* Ensuring text remains white for maximum contrast */
+  transform: translateY(-1px);
+}
+
+/* Media query for smaller screens */
+@media (max-width: 480px) {
+  .bookmarkButton {
+    padding: 0.7rem 1rem;
+    font-size: 0.9rem;
+  }
+} 
+
+/* RTL support for BookmarkButton */
+:global(html[dir="rtl"]) .bookmarkButton {
+  flex-direction: row-reverse;
+}
+
+:global(html[dir="rtl"]) .bookmarkButton::before {
+  margin-right: 0;
+  margin-left: 5px;
+} 

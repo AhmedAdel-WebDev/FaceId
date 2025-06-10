@@ -1,0 +1,423 @@
+/* Modern Sleek Dashboard Component Styles */
+
+/* Dash Container */
+.dashboardContainer {
+    padding: 1rem 0;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.dashboardTitle {
+    color: #f3f4f6;
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+    position: relative;
+    padding-bottom: 0.8rem;
+    position: relative;
+}
+
+.dashboardTitle::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #3b82f6, #60a5fa);
+    border-radius: 3px;
+}
+
+.welcomeMessage {
+    color: #d1d5db;
+    margin-bottom: 2.5rem;
+    font-size: 1.1rem;
+    line-height: 1.5;
+    animation: fadeIn 0.6s ease-out;
+}
+
+/* Animation Keyframes */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateX(-20px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes scaleIn {
+    from { opacity: 0; transform: scale(0.92); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes countUp {
+    from { transform: translateY(10px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes shine {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
+
+/* RTL Support for Dashboard Component */
+:global(html[dir="rtl"]) .dashboardTitle {
+  text-align: right;
+}
+
+:global(html[dir="rtl"]) .dashboardTitle::after {
+  left: auto;
+  right: 0;
+}
+
+:global(html[dir="rtl"]) .welcomeMessage {
+  text-align: right;
+}
+
+/* Stats Section Styles */
+.statsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.8rem;
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.statCard {
+    background: rgba(31, 41, 55, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 1.8rem;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 
+                0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    position: relative;
+    overflow: hidden;
+    animation: scaleIn 0.5s ease forwards;
+}
+
+.statCard::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.1) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    top: 0;
+    left: -100%;
+    transition: left 0.7s ease;
+    z-index: 1;
+}
+
+.statCard:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+                0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    border-color: rgba(96, 165, 250, 0.4);
+    background: rgba(31, 41, 55, 0.9);
+}
+
+.statCard:hover::before {
+    animation: shine 1.5s ease;
+}
+
+.statCard h4 {
+    color: #60a5fa;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.8rem;
+    line-height: 1.2;
+    animation: countUp 0.8s ease forwards;
+    background: linear-gradient(90deg, #60a5fa, #3b82f6);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.statCard p {
+    color: #d1d5db;
+    font-size: 1rem;
+    font-weight: 500;
+    margin: 0;
+    line-height: 1.3;
+    animation: countUp 0.8s ease 0.2s forwards;
+}
+
+/* Staggered animation delays */
+.statsGrid > div:nth-child(1) { animation-delay: 0.1s; }
+.statsGrid > div:nth-child(2) { animation-delay: 0.2s; }
+.statsGrid > div:nth-child(3) { animation-delay: 0.3s; }
+.statsGrid > div:nth-child(4) { animation-delay: 0.4s; }
+.statsGrid > div:nth-child(5) { animation-delay: 0.5s; }
+.statsGrid > div:nth-child(6) { animation-delay: 0.6s; }
+
+.errorText {
+    color: #f87171;
+    grid-column: 1 / -1;
+    text-align: center;
+    background-color: rgba(239, 68, 68, 0.1);
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid rgba(239, 68, 68, 0.2);
+    animation: fadeIn 0.5s ease;
+}
+
+/* RTL Support for Stats Card RTL Animation Adjustments */
+:global(html[dir="rtl"]) .statCard::before {
+  left: auto;
+  right: -100%;
+}
+
+:global(html[dir="rtl"]) .statCard:hover::before {
+  animation: shineRtl 1.5s ease;
+}
+
+@keyframes shineRtl {
+  0% { right: -100%; }
+  100% { right: 100%; }
+}
+
+/* Action Grid Styles */
+.actionGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.8rem;
+    animation: fadeIn 0.5s ease-out;
+    animation-delay: 0.3s;
+    animation-fill-mode: both;
+}
+
+.actionCard {
+    background: rgba(31, 41, 55, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 2rem;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+    display: block;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 
+                0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+.actionCard::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.1) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    top: 0;
+    left: -100%;
+    transition: left 0.7s ease;
+    z-index: 1;
+}
+
+.actionCard:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+                0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    border-color: rgba(96, 165, 250, 0.4);
+    background: rgba(31, 41, 55, 0.9);
+}
+
+.actionCard:hover::before {
+    animation: shine 1.5s ease;
+}
+
+.actionCard h3 {
+    color: #93c5fd;
+    font-size: 1.3rem;
+    margin-bottom: 0.8rem;
+    font-weight: 600;
+    position: relative;
+    display: inline-block;
+}
+
+.actionCard h3::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #3b82f6, #60a5fa);
+    transition: width 0.3s ease;
+}
+
+.actionCard:hover h3::after {
+    width: 100%;
+}
+
+.actionCard p {
+    color: #d1d5db;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+.placeholderCard {
+    opacity: 0.7;
+    background: rgba(75, 85, 99, 0.4);
+    cursor: not-allowed;
+}
+
+.placeholderCard:hover {
+    transform: none;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 
+                0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    border-color: rgba(255, 255, 255, 0.05);
+}
+
+.placeholderCard:hover h3::after {
+    width: 0;
+}
+
+/* Loading State */
+.loadingText {
+    color: #93c5fd;
+    text-align: center;
+    grid-column: 1 / -1;
+    padding: 1.5rem;
+    font-size: 1.1rem;
+    animation: pulse 1.5s infinite ease-in-out;
+    position: relative;
+}
+
+@keyframes pulse {
+    0% { opacity: 0.6; }
+    50% { opacity: 1; }
+    100% { opacity: 0.6; }
+}
+
+/* RTL Support for Action Cards RTL Adjustments */
+:global(html[dir="rtl"]) .actionCard h3 {
+  text-align: right;
+}
+
+:global(html[dir="rtl"]) .actionCard h3::after {
+  left: auto;
+  right: 0;
+}
+
+:global(html[dir="rtl"]) .actionCard:hover h3::after {
+  width: 100%;
+}
+
+:global(html[dir="rtl"]) .actionCard p {
+  text-align: right;
+}
+
+:global(html[dir="rtl"]) .actionCard::before {
+  left: auto;
+  right: -100%;
+}
+
+:global(html[dir="rtl"]) .actionCard:hover::before {
+  animation: shineRtl 1.5s ease;
+}
+
+:global(html[dir="rtl"]) .errorText {
+  text-align: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .statsGrid {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 1.5rem;
+    }
+    
+    .actionGrid {
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .dashboardTitle {
+        font-size: 1.6rem;
+    }
+    
+    .welcomeMessage {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+    
+    .statsGrid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.2rem;
+        margin-bottom: 2.5rem;
+        padding-bottom: 1.8rem;
+    }
+    
+    .statCard {
+        padding: 1.5rem;
+    }
+    
+    .statCard h4 {
+        font-size: 2rem;
+    }
+    
+    .actionGrid {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+    }
+    
+    .actionCard {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .dashboardTitle {
+        font-size: 1.4rem;
+    }
+    
+    .statsGrid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .statCard {
+        padding: 1.2rem;
+    }
+    
+    .statCard h4 {
+        font-size: 1.8rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .statCard p {
+        font-size: 0.9rem;
+    }
+    
+    .actionCard {
+        padding: 1.2rem;
+    }
+    
+    .actionCard h3 {
+        font-size: 1.2rem;
+    }
+    
+    .actionCard p {
+        font-size: 0.9rem;
+    }
+}

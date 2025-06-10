@@ -1,0 +1,1462 @@
+/* Modern Sleek Form Styles */
+.form {
+    background: rgba(31, 41, 55, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 2.5rem;
+    border-radius: 16px;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 
+                0 10px 10px -5px rgba(0, 0, 0, 0.2);
+    max-width: 800px;
+    margin: 2rem auto;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 25px 30px -5px rgba(0, 0, 0, 0.4), 
+                0 10px 10px -5px rgba(0, 0, 0, 0.3);
+}
+
+.form h2 {
+    color: #f3f4f6;
+    text-align: center;
+    margin-bottom: 1.8rem;
+    position: relative;
+    padding-bottom: 0.8rem;
+    font-size: 1.8rem;
+    letter-spacing: 0.5px;
+}
+
+.form h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #3b82f6, #60a5fa);
+    border-radius: 3px;
+}
+
+.formGroup {
+    margin-bottom: 1.8rem;
+    position: relative;
+}
+
+.formGroup label {
+    display: block;
+    color: #93c5fd;
+    margin-bottom: 0.6rem;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    letter-spacing: 0.3px;
+}
+
+.formGroup input[type="text"],
+.formGroup input[type="email"],
+.formGroup input[type="password"],
+.formGroup input[type="url"] {
+    width: 100%;
+    padding: 0.9rem 1rem;
+    background-color: rgba(17, 24, 39, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    color: #f3f4f6;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.formGroup input:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+    transform: translateY(-2px);
+}
+
+.formGroup input:disabled {
+    background-color: rgba(75, 85, 99, 0.5);
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+/* Select dropdown styles */
+.formGroup select.selectInput {
+    width: 100%;
+    padding: 0.9rem 1rem;
+    background-color: rgba(17, 24, 39, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    color: #f3f4f6;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%2360a5fa' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.8rem center;
+    background-size: 1.2rem;
+    padding-right: 2.5rem;
+}
+
+.formGroup select.selectInput:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+    transform: translateY(-2px);
+}
+
+.formGroup select.selectInput:disabled {
+    background-color: rgba(75, 85, 99, 0.5);
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+/* Date input styling */
+.formGroup input[type="date"] {
+    width: 100%;
+    padding: 0.9rem 1rem;
+    background-color: rgba(17, 24, 39, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    color: #f3f4f6;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.formGroup input[type="date"]:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+    transform: translateY(-2px);
+}
+
+.formGroup input[type="date"]:disabled {
+    background-color: rgba(75, 85, 99, 0.5);
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+/* Calendar icon color fix */
+.formGroup input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(70%) sepia(58%) saturate(2578%) hue-rotate(199deg) brightness(96%) contrast(94%);
+    cursor: pointer;
+}
+
+/* Modern submit button */
+.submitButton {
+    display: block;
+    width: 100%;
+    background: linear-gradient(90deg, #3b82f6, #60a5fa);
+    color: #ffffff;
+    padding: 1rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 1.5rem;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.submitButton::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.7s ease;
+    z-index: -1;
+}
+
+.submitButton:hover::before {
+    left: 100%;
+}
+
+.submitButton:hover {
+    background: linear-gradient(90deg, #2563eb, #3b82f6);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(37, 99, 235, 0.3);
+}
+
+.submitButton:active {
+    transform: translateY(0);
+}
+
+.submitButton:disabled {
+    background: linear-gradient(90deg, #9ca3af, #d1d5db);
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+    opacity: 0.7;
+}
+
+/* Error and success message styling */
+.error {
+    color: #f87171;
+    background-color: rgba(248, 113, 113, 0.1);
+    border: 1px solid rgba(248, 113, 113, 0.2);
+    padding: 1rem 1.2rem;
+    border-radius: 8px;
+    margin-bottom: 1.8rem;
+    font-size: 0.95rem;
+    text-align: center;
+    animation: fadeIn 0.3s ease;
+}
+
+.success {
+    color: #34d399;
+    background-color: rgba(52, 211, 153, 0.1);
+    border: 1px solid rgba(52, 211, 153, 0.2);
+    padding: 1rem 1.2rem;
+    border-radius: 8px;
+    margin-bottom: 1.8rem;
+    font-size: 0.95rem;
+    text-align: center;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Links within forms */
+.form a {
+    color: #60a5fa;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.form a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: -2px;
+    left: 0;
+    background: linear-gradient(90deg, #3b82f6, #60a5fa);
+    transition: width 0.3s ease;
+}
+
+.form a:hover {
+    color: #93c5fd;
+}
+
+.form a:hover::after {
+    width: 100%;
+}
+
+/* Helper text styling */
+.helperText {
+    display: block;
+    margin-top: 0.6rem;
+    font-size: 0.85rem;
+    color: #93c5fd;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+/* --- NEW: Responsive adjustments --- */
+@media (max-width: 480px) {
+    .form {
+        padding: 1.8rem 1.5rem; /* Reduce padding */
+    }
+    .form h2 {
+        font-size: 1.5rem; /* Adjust title size */
+    }
+    .formGroup label {
+        font-size: 0.85rem;
+    }
+    .formGroup input[type="text"],
+    .formGroup input[type="email"],
+    .formGroup input[type="password"],
+    .formGroup input[type="url"],
+    .formGroup select.selectInput {
+        padding: 0.7rem 0.9rem;
+        font-size: 0.95rem;
+    }
+    .submitButton {
+        padding: 0.7rem;
+        font-size: 0.95rem;
+    }
+}
+/* --- END NEW --- */
+
+/* --- NEW: Face Login Styles --- */
+
+
+.divider {
+    text-align: center;
+    color: #a0aec0; /* Medium gray */
+    margin: 2rem 0;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    position: relative;
+}
+
+.divider::before,
+.divider::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 40%; /* Adjust width as needed */
+    height: 1px;
+    background-color: #4a5568; /* Subtle border color */
+}
+
+.divider::before {
+    left: 0;
+}
+
+.divider::after {
+    right: 0;
+}
+
+.faceLoginSection {
+    text-align: center; /* Center content within this section */
+}
+
+.faceLoginSection h3 {
+    color: #e2e8f0; /* Light gray */
+    margin-bottom: 1.5rem;
+}
+
+.webcamContainer {
+    margin-bottom: 1rem;
+    position: relative;
+    width: 100%;
+    max-width: 320px; /* Limit webcam size */
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 6px;
+    overflow: hidden; /* Ensure video fits rounded corners */
+    border: 1px solid #4a5568;
+}
+
+/* Styles for image previews in registration form */
+.imagePreviewContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px; /* Increased gap for better spacing */
+    margin-top: 10px;
+    padding: 12px;
+    border: 1px dashed #4a5568;
+    border-radius: 6px;
+    background-color: #1a202c;
+}
+
+.imagePreviewItem {
+    position: relative;
+    border: 1px solid #384252;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #2d3748;
+    width: 120px; /* Increased width */
+    height: 140px; /* Increased height to accommodate button with spacing */
+    display: flex;
+    flex-direction: column;
+}
+
+.imagePreviewItem img {
+    display: block;
+    width: 100%;
+    height: 100px; /* Fixed height for images */
+    object-fit: cover;
+    border-bottom: 1px solid #384252; /* Subtle separator */
+    margin-bottom: 5px; /* Add space between image and button */
+}
+
+/* New styles for "Remove" button beneath each image */
+.imageRemoveButton {
+    width: 80%;
+    background-color: #e53e3e;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 3px 0;
+    font-size: 11px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: center;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    margin: 0 auto 5px auto; /* Center button and add bottom margin */
+}
+
+.imageRemoveButton:hover {
+    background-color: #c53030;
+}
+
+.imageRemoveButton:disabled {
+    background-color: #718096;
+    cursor: not-allowed;
+}
+
+/* Re-add webcam video styling */
+.webcamVideo {
+    display: block;
+    width: 100%;
+    height: auto;
+    transform: scaleX(-1); /* Mirror the video feed */
+}
+
+.faceLoginButton {
+    /* Specific styles if needed, otherwise inherits from submitButton */
+    margin-bottom: 0.5rem; /* Space below main face login button */
+}
+
+.cancelButton {
+    background-image: none;
+    background-color: #718096; /* Gray background */
+    color: #e2e8f0;
+    margin-top: 0.5rem; /* Space above cancel button */
+}
+
+.cancelButton:hover {
+    background-color: #a0aec0;
+    color: #1a202c;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transform: translateY(-1px);
+}
+
+.cancelButton:disabled {
+    background-color: #4a5568;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* --- END NEW --- */
+
+/* --- Responsive adjustments --- */
+@media (max-width: 480px) {
+    .form {
+        padding: 1.8rem 1.5rem; /* Reduce padding */
+    }
+    .form h2 {
+        font-size: 1.5rem; /* Adjust title size */
+    }
+    .formGroup label {
+        font-size: 0.85rem;
+    }
+    .formGroup input[type="text"],
+    .formGroup input[type="email"],
+    .formGroup input[type="password"],
+    .formGroup input[type="url"],
+    .formGroup select.selectInput {
+        padding: 0.7rem 0.9rem;
+        font-size: 0.95rem;
+    }
+    .submitButton {
+        padding: 0.7rem;
+        font-size: 0.95rem;
+    }
+}
+/* --- END NEW --- */
+
+
+/* Styles for dedicated profile picture */
+.profilePicLabel {
+  display: inline-block;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 2px dashed #4a5568;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-bottom: 15px;
+  background-color: #1a202c;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.profilePicLabel:hover {
+  border-color: #63b3ed;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.profilePicPreview {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profilePicPlaceholder {
+  color: #a0aec0;
+  font-size: 0.9rem;
+  text-align: center;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profilePicPlaceholder:before {
+  content: '📷';
+  font-size: 2rem;
+  margin-bottom: 8px;
+}
+
+/* Styles for camera container and webcam feed */
+.cameraContainer {
+  margin-top: 15px;
+  border: 1px solid #4a5568;
+  padding: 15px;
+  border-radius: 8px;
+  background-color: #2d3748;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.webcamFeed {
+  border-radius: 8px;
+  margin-bottom: 15px;
+  max-width: 100%;
+  height: auto;
+  border: 1px solid #4a5568;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.buttonSecondary {
+  background-color: #4a5568;
+  color: #e2e8f0;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.2s ease-in-out;
+  width: 100%;
+  font-weight: 500;
+}
+
+.buttonSecondary:hover {
+  background-color: #63b3ed;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.buttonSecondary:disabled {
+  background-color: #4a5568;
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.buttonPrimary {
+  background-color: #4299e1;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+  width: 100%;
+}
+
+.buttonPrimary:hover {
+  background-color: #3182ce;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.buttonPrimary:disabled {
+  background-color: #4299e1;
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Grid layout for form fields */
+.formGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.formGrid .formGroup {
+    margin-bottom: 0; /* Override default margin since grid has gap */
+}
+
+.fullWidth {
+    grid-column: 1 / -1; /* Span all columns */
+}
+
+.centerItem {
+    grid-column: 1 / -1;
+    justify-self: center;
+    text-align: center;
+}
+
+/* FaceID section grid layout */
+.faceIdSection {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+/* Responsive adjustments for grid */
+@media (max-width: 768px) {
+    .formGrid {
+        grid-template-columns: 1fr; /* Stack vertically on smaller screens */
+    }
+}
+
+/* Form note for login/register links */
+.formNote {
+    text-align: center;
+    margin-top: 1.5rem;
+    color: #a0aec0;
+    font-size: 0.9rem;
+}
+
+/* Phone number input styling */
+.phoneInput {
+    width: 100%;
+    padding: 0.8rem 1rem 0.8rem 3rem; /* Add extra left padding for the icon */
+    background-color: #1a202c;
+    border: 1px solid #4a5568;
+    border-radius: 6px;
+    color: #e2e8f0;
+    font-size: 1rem;
+    transition: all 0.2s ease-in-out;
+    background-position: 1rem center;
+    position: relative;
+}
+
+.phoneInput:focus {
+    outline: none;
+    border-color: #4299e1;
+    box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.3);
+}
+
+.phoneInput:disabled {
+    background-color: #4a5568;
+    cursor: not-allowed;
+}
+
+.labelIcon {
+    margin-right: 0.5rem;
+    font-size: 1rem;
+}
+
+/* Add telephone styles for general type="tel" inputs */
+.formGroup input[type="tel"] {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    background-color: #1a202c;
+    border: 1px solid #4a5568;
+    border-radius: 6px;
+    color: #e2e8f0;
+    font-size: 1rem;
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+/* Links and Link Buttons */
+.linkButton {
+    background: none;
+    border: none;
+    color: #60a5fa;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    font-weight: 500;
+}
+
+.linkButton:hover {
+    background: rgba(59, 130, 246, 0.1);
+    color: #93c5fd;
+    text-decoration: underline;
+}
+
+.linkButton:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.4);
+}
+
+/* Forgot password container */
+.forgotPasswordContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.2rem;
+    padding: 0.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* File Upload styling */
+.fileUploadWrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+}
+
+.fileUploadButton {
+    display: block;
+    background: linear-gradient(90deg, #3b82f6, #60a5fa);
+    color: white;
+    padding: 0.8rem 1.2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.fileUploadButton:hover {
+    background: linear-gradient(90deg, #2563eb, #3b82f6);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.fileIcon {
+    margin-right: 0.5rem;
+}
+
+.fileInput {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.fileName {
+    margin-top: 0.5rem;
+    padding: 0.5rem 0.8rem;
+    background: rgba(17, 24, 39, 0.5);
+    border-radius: 6px;
+    color: #e2e8f0;
+    font-size: 0.9rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* General file input styling */
+.formGroup input[type="file"] {
+    width: 100%;
+    color: #f3f4f6;
+    padding: 0.8rem;
+    background: rgba(17, 24, 39, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.formGroup input[type="file"]:hover {
+    background: rgba(31, 41, 55, 0.7);
+    border-color: rgba(96, 165, 250, 0.5);
+}
+
+.formGroup input[type="file"]::-webkit-file-upload-button {
+    background: linear-gradient(90deg, #3b82f6, #60a5fa);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    margin-right: 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.formGroup input[type="file"]::-webkit-file-upload-button:hover {
+    background: linear-gradient(90deg, #2563eb, #3b82f6);
+}
+
+/* Password input container and eye icon styles */
+.passwordInputContainer {
+    position: relative;
+    width: 100%;
+}
+
+.passwordInput {
+    width: 100%;
+    padding: 0.9rem 1rem;
+    padding-right: 40px; /* Space for the icon button */
+    background-color: rgba(17, 24, 39, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    color: #f3f4f6;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.passwordToggleBtn {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 24px;
+    width: 24px;
+    color: white;
+    opacity: 0.7;
+    transition: opacity 0.2s ease;
+}
+
+/* RTL specific styles for password input */
+:global(html.rtl) .passwordToggleBtn {
+    right: auto;
+    left: 10px;
+}
+
+:global(html.rtl) .passwordInput {
+    padding-right: 1rem;
+    padding-left: 40px; /* Space for the icon button on the left side */
+}
+
+.passwordToggleBtn:hover {
+    opacity: 1;
+}
+
+.passwordIcon {
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+}
+
+.passwordIcon svg {
+    width: 100%;
+    height: 100%;
+    fill: none;
+    stroke: white;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+@media (max-width: 480px) {
+    .passwordInputContainer {
+        width: 100%;
+    }
+    
+    .passwordInput {
+        padding: 0.7rem 0.9rem;
+        padding-right: 36px;
+        font-size: 0.95rem;
+    }
+    
+    .passwordToggleBtn {
+        right: 8px;
+        height: 20px;
+        width: 20px;
+    }
+
+    /* RTL specific styles for password input on mobile */
+    :global(html.rtl) .passwordToggleBtn {
+        right: auto;
+        left: 8px;
+    }
+    
+    :global(html.rtl) .passwordInput {
+        padding-right: 0.9rem;
+        padding-left: 36px;
+    }
+    
+    .passwordIcon {
+        font-size: 14px;
+    }
+}
+
+/* Fix for autocompleted input fields showing white background */
+.formGroup input:-webkit-autofill,
+.formGroup input:-webkit-autofill:hover,
+.formGroup input:-webkit-autofill:focus,
+.formGroup input:-webkit-autofill:active,
+.passwordInput:-webkit-autofill,
+.passwordInput:-webkit-autofill:hover,
+.passwordInput:-webkit-autofill:focus,
+.passwordInput:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s !important;
+    -webkit-text-fill-color: #f3f4f6 !important;
+    background-color: rgba(17, 24, 39, 0.8) !important;
+    box-shadow: 0 0 0px 1000px rgba(17, 24, 39, 0.8) inset !important;
+    -webkit-box-shadow: 0 0 0px 1000px rgba(17, 24, 39, 0.8) inset !important;
+}
+
+/* RTL specific styling for forms */
+:global(html[dir="rtl"]) .formGroup label {
+  text-align: right;
+}
+
+:global(html[dir="rtl"]) .helperText {
+  text-align: right;
+}
+
+:global(html[dir="rtl"]) .formNote {
+  text-align: center;
+}
+
+:global(html[dir="rtl"]) .labelIcon {
+  margin-right: 0;
+  margin-left: 0.5rem;
+}
+
+/* RTL password field adjustments */
+:global(html[dir="rtl"]) .passwordToggleBtn {
+  right: auto;
+  left: 10px;
+}
+
+:global(html[dir="rtl"]) .passwordInput {
+  padding-right: 1rem;
+  padding-left: 40px; /* Space for the icon button on the left side */
+}
+
+/* RTL adjustments for mobile */
+@media (max-width: 480px) {
+  :global(html[dir="rtl"]) .passwordToggleBtn {
+    right: auto;
+    left: 8px;
+  }
+  
+  :global(html[dir="rtl"]) .passwordInput {
+    padding-right: 0.9rem;
+    padding-left: 36px;
+  }
+}
+
+/* Fix for file input direction in RTL */
+:global(html[dir="rtl"]) .formGroup input[type="file"] {
+  direction: rtl;
+}
+
+:global(html[dir="rtl"]) .formGroup input[type="file"]::-webkit-file-upload-button {
+  margin-right: 0;
+  margin-left: 1rem;
+}
+
+/* RTL styles for social links and contact items */
+:global(html[dir="rtl"]) .socialLinks a::after {
+  left: auto;
+  right: 0;
+}
+
+:global(html[dir="rtl"]) .forgotPasswordContainer {
+  text-align: right;
+}
+
+/* General RTL text alignment for form elements */
+:global(html[dir="rtl"]) .form h2,
+:global(html[dir="rtl"]) .form p,
+:global(html[dir="rtl"]) .error,
+:global(html[dir="rtl"]) .success {
+  text-align: right;
+}
+
+:global(html[dir="rtl"]) .form h2::after {
+  left: auto;
+  right: 50%;
+  transform: translateX(50%);
+}
+
+/* RTL style for checkboxes and radio buttons */
+:global(html[dir="rtl"]) input[type="checkbox"],
+:global(html[dir="rtl"]) input[type="radio"] {
+  margin-right: 0;
+  margin-left: 0.5rem;
+}
+
+/* Face ID Section Styles */
+.webcamSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(17, 24, 39, 0.8); /* Slightly darker background for contrast */
+  border-radius: 16px; /* Increased border radius */
+  padding: 2rem; /* Increased padding */
+  margin-bottom: 2rem; /* More space below */
+  border: 1px solid rgba(96, 165, 250, 0.3); /* Slightly more visible border */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow for depth */
+  position: relative;
+  overflow: hidden;
+  width: 100%; /* Ensure full width */
+  transition: all 0.3s ease; /* Smooth transition for any changes */
+}
+
+.webcamSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px; /* Slightly thicker accent line */
+  background: linear-gradient(90deg, #3b82f6, #60a5fa, #93c5fd);
+  border-radius: 4px 4px 0 0;
+}
+
+.webcam {
+  width: 100%;
+  max-width: 600px; /* Further increased from 550px */
+  border-radius: 12px; /* Increased border radius */
+  border: 3px solid rgba(96, 165, 250, 0.4); /* Thicker, more visible border */
+  margin-bottom: 1.5rem; /* More space below */
+  transform: scaleX(-1); /* Mirror the video feed */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Enhanced shadow */
+}
+
+.webcamHint {
+  text-align: center;
+  color: #93c5fd;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.captureButton {
+  background: linear-gradient(90deg, #3b82f6, #60a5fa);
+  color: white;
+  border: none;
+  padding: 1rem 2rem; /* Larger button */
+  border-radius: 10px; /* Increased border radius */
+  font-weight: 600; /* Bolder text */
+  font-size: 1.1rem; /* Larger text */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.captureButton:hover {
+  background: linear-gradient(90deg, #2563eb, #3b82f6);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(37, 99, 235, 0.3);
+}
+
+.captureButton:active {
+  transform: translateY(0);
+}
+
+.captureButton:disabled {
+  background: linear-gradient(90deg, #9ca3af, #d1d5db);
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.capturedImagesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+  width: 100%;
+}
+
+.capturedImageContainer {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  background: rgba(31, 41, 55, 0.5);
+  border: 1px solid rgba(96, 165, 250, 0.3);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  aspect-ratio: 1;
+}
+
+.capturedImageContainer:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-color: rgba(96, 165, 250, 0.6);
+}
+
+.capturedImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.removeImageButton {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: rgba(239, 68, 68, 0.8);
+  color: white;
+  border: none;
+  font-size: 16px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  opacity: 0;
+}
+
+.capturedImageContainer:hover .removeImageButton {
+  opacity: 1;
+}
+
+.removeImageButton:hover {
+  background-color: rgb(239, 68, 68);
+  transform: scale(1.1);
+}
+
+.faceIdTitle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #93c5fd;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.faceIdIcon {
+  font-size: 1.2rem;
+}
+
+.faceIdCounter {
+  background: rgba(59, 130, 246, 0.2);
+  color: #93c5fd;
+  padding: 0.2rem 0.5rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  margin-left: 0.5rem;
+}
+
+.faceIdGuide {
+  background: rgba(17, 24, 39, 0.6);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid rgba(96, 165, 250, 0.2);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.faceIdGuide::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #10b981, #34d399); /* Green gradient */
+  border-radius: 4px 4px 0 0;
+}
+
+.guideTitle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #34d399;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.guideTipsList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.guideTip {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+  color: #e2e8f0;
+  font-size: 0.95rem;
+}
+
+.tipIcon {
+  color: #34d399;
+  margin-top: 0.2rem;
+  flex-shrink: 0;
+}
+
+.tipContent {
+  flex: 1;
+}
+
+.tipExample {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.exampleItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  width: calc(33.333% - 1rem);
+  min-width: 100px;
+}
+
+.exampleIcon {
+  font-size: 1.5rem;
+  color: #93c5fd;
+  background: rgba(59, 130, 246, 0.1);
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.exampleText {
+  text-align: center;
+  color: #cbd5e1;
+  font-size: 0.85rem;
+}
+
+/* Face ID Verification Styles */
+.faceVerificationContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(17, 24, 39, 0.8);
+  border-radius: 16px;
+  padding: 2.5rem;
+  margin: 2rem auto;
+  max-width: 600px;
+  border: 1px solid rgba(96, 165, 250, 0.3);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.faceVerificationContainer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, #3b82f6, #60a5fa, #93c5fd);
+  border-radius: 4px 4px 0 0;
+}
+
+.faceVerificationContainer h3 {
+  color: #f3f4f6;
+  margin-bottom: 1.2rem;
+  font-size: 1.5rem;
+  text-align: center;
+  position: relative;
+  padding-bottom: 0.8rem;
+}
+
+.faceVerificationContainer h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #3b82f6, #60a5fa);
+  border-radius: 3px;
+}
+
+.faceVerificationContainer p {
+  color: #d1d5db;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  max-width: 500px;
+  line-height: 1.6;
+}
+
+.faceVerificationContainer p strong {
+  color: #93c5fd;
+  font-weight: 600;
+}
+
+.webcamContainer {
+  margin-bottom: 1.5rem;
+  position: relative;
+  width: 100%;
+  max-width: 450px; /* Increased size */
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 3px solid rgba(96, 165, 250, 0.4);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.webcamVideo {
+  display: block;
+  width: 100%;
+  height: auto;
+  transform: scaleX(-1); /* Mirror the video feed */
+}
+
+/* Overlay for face positioning guide */
+.webcamContainer::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 200px;
+  border: 2px dashed rgba(96, 165, 250, 0.6);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.faceLoginButton {
+  background: linear-gradient(90deg, #3b82f6, #60a5fa);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto 1rem auto;
+}
+
+.faceLoginButton:hover {
+  background: linear-gradient(90deg, #2563eb, #3b82f6);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(37, 99, 235, 0.3);
+}
+
+.faceLoginButton:disabled {
+  background: linear-gradient(90deg, #9ca3af, #d1d5db);
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.cancelButton {
+  background: rgba(75, 85, 99, 0.8);
+  color: #e2e8f0;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.cancelButton:hover {
+  background: rgba(107, 114, 128, 0.9);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.cancelButton:disabled {
+  background: rgba(75, 85, 99, 0.5);
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Face verification status indicator */
+.verificationStatus {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  padding: 0.8rem;
+  border-radius: 8px;
+  background: rgba(17, 24, 39, 0.5);
+  border: 1px solid rgba(96, 165, 250, 0.2);
+  width: 100%;
+  max-width: 300px;
+}
+
+.statusIcon {
+  font-size: 1.2rem;
+  margin-right: 0.8rem;
+}
+
+.statusText {
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.verifyingStatus {
+  color: #93c5fd;
+}
+
+.errorStatus {
+  color: #f87171;
+}
+
+/* Spinner animation */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.statusIcon.spinning {
+  animation: spin 1s linear infinite;
+}

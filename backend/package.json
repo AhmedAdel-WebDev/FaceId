@@ -1,0 +1,35 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "import": "node seeder -i",
+    "destroy": "node seeder -d"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@tensorflow/tfjs-node": "^4.22.0",
+    "axios": "^1.8.4",
+    "bcryptjs": "^2.4.3",
+    "canvas": "^3.1.0",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.1",
+    "face-api.js": "^0.22.2",
+    "jsonwebtoken": "^9.0.0",
+    "mongoose": "^6.0.0",
+    "multer": "^1.4.5-lts.2",
+    "node-cron": "^4.0.5",
+    "nodemailer": "^6.10.1",
+    "speakeasy": "^2.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}

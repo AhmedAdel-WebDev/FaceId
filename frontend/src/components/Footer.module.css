@@ -1,0 +1,285 @@
+/* Modern Sleek Footer Styles */
+.footer {
+  background-color: #1f2937;
+  background-image: linear-gradient(180deg, #111827 0%, #1f2937 100%);
+  color: #9ca3af;
+  padding: 3rem 5% 1.5rem;
+  margin-top: auto;
+  width: 100%;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 -10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.footerContent {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-bottom: 2.5rem;
+}
+
+.footerSection h3 {
+  color: #f3f4f6;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 1.2rem;
+  position: relative;
+  padding-bottom: 0.6rem;
+}
+
+.footerSection h3::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 40px;
+  height: 2px;
+  background: linear-gradient(90deg, #3b82f6, #60a5fa);
+  border-radius: 2px;
+}
+
+.footerSection p {
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+.footerSection ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footerSection ul li {
+  margin-bottom: 0.9rem;
+}
+
+.footerSection ul li a {
+  color: #9ca3af;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+  display: inline-block;
+  position: relative;
+  padding-left: 1rem;
+}
+
+.footerSection ul li a::before {
+  content: '›';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #60a5fa;
+  transition: transform 0.3s ease;
+}
+
+.footerSection ul li a:hover {
+  color: #f3f4f6;
+  transform: translateX(3px);
+}
+
+.footerSection ul li a:hover::before {
+  transform: translateX(3px);
+}
+
+.contactList li {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.contactList li:hover {
+  transform: translateX(3px);
+  color: #d1d5db;
+}
+
+.socialLinks {
+  display: flex;
+  gap: 1.2rem;
+  margin-top: 0.5rem;
+}
+
+.socialLinks a {
+  color: #9ca3af;
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(31, 41, 55, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.socialLinks a:hover {
+  color: #f3f4f6;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(135deg, #3b82f6, #60a5fa);
+}
+
+.footerBottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding-top: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-size: 0.9rem;
+}
+
+.footerLinks {
+  display: flex;
+  gap: 1.8rem;
+}
+
+.footerLinks a {
+  color: #9ca3af;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.footerLinks a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 1px;
+  bottom: -3px;
+  left: 0;
+  background: linear-gradient(90deg, #3b82f6, #60a5fa);
+  transition: width 0.3s ease;
+}
+
+.footerLinks a:hover {
+  color: #f3f4f6;
+}
+
+.footerLinks a:hover::after {
+  width: 100%;
+}
+
+/* RTL specific footer adjustments */
+:global(html[dir="rtl"]) .footerSection h3 {
+  text-align: right;
+}
+
+:global(html[dir="rtl"]) .footerSection h3::after {
+  left: auto;
+  right: 0;
+}
+
+:global(html[dir="rtl"]) .footerSection p {
+  text-align: right;
+}
+
+:global(html[dir="rtl"]) .footerSection ul li a {
+  padding-left: 0;
+  padding-right: 1rem;
+  text-align: right;
+}
+
+:global(html[dir="rtl"]) .footerSection ul li a::before {
+  left: auto;
+  right: 0;
+}
+
+:global(html[dir="rtl"]) .footerSection ul li a:hover {
+  transform: translateX(-3px);
+}
+
+:global(html[dir="rtl"]) .footerSection ul li a:hover::before {
+  transform: translateX(-3px);
+}
+
+:global(html[dir="rtl"]) .contactList li {
+  text-align: right;
+}
+
+:global(html[dir="rtl"]) .contactList li:hover {
+  transform: translateX(-3px);
+}
+
+:global(html[dir="rtl"]) .socialLinks {
+  justify-content: flex-end;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .footerContent {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .footer {
+    padding: 2rem 5% 1rem;
+  }
+  
+  .footerContent {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .footerSection {
+    text-align: center;
+  }
+  
+  .footerSection h3::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .contactList li {
+    justify-content: center;
+  }
+
+  .socialLinks {
+    justify-content: center;
+  }
+
+  .footerBottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .footerLinks {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem 1.5rem;
+  }
+  
+  .footerSection ul li a {
+    padding-left: 0;
+  }
+  
+  .footerSection ul li a::before {
+    display: none;
+  }
+
+  /* Responsive adjustments for RTL */
+  :global(html[dir="rtl"]) .footerSection {
+    text-align: center;
+  }
+  
+  :global(html[dir="rtl"]) .footerSection h3::after {
+    right: 50%;
+    transform: translateX(50%);
+  }
+  
+  :global(html[dir="rtl"]) .footerSection ul li a {
+    padding-right: 0;
+  }
+  
+  :global(html[dir="rtl"]) .socialLinks {
+    justify-content: center;
+  }
+}

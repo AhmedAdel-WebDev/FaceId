@@ -1,0 +1,53 @@
+/* RTL Support for Arabic language */
+html.rtl {
+  direction: rtl;
+  text-align: right;
+}
+
+/* Flip icons in RTL mode */
+html.rtl .icon-flip {
+  transform: scaleX(-1);
+}
+
+/* Adjust dropdown positioning for RTL */
+html.rtl .dropdown-content {
+  left: auto;
+  right: 0;
+}
+
+/* Adjust any padding/margins that need to be flipped */
+html.rtl .nav-item-with-padding-left {
+  padding-left: 0;
+  padding-right: 1rem;
+}
+
+html.rtl .nav-item-with-margin-left {
+  margin-left: 0;
+  margin-right: 1rem;
+}
+
+/* Fix password eye icon positioning in RTL mode */
+html.rtl .passwordToggleBtn {
+  right: auto !important;
+  left: 10px !important;
+}
+
+html.rtl .passwordInput {
+  padding-right: 1rem !important;
+  padding-left: 40px !important; /* Space for the icon button on the left side */
+}
+
+/* Adjust eye icon position in RTL mode for mobile */
+@media (max-width: 480px) {
+  html.rtl .passwordToggleBtn {
+    right: auto !important;
+    left: 8px !important;
+  }
+  
+  html.rtl .passwordInput {
+    padding-right: 0.9rem !important;
+    padding-left: 36px !important;
+  }
+}
+
+/* Add more specific RTL styles as needed */ 

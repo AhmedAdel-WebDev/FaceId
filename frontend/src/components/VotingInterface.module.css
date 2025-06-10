@@ -1,0 +1,535 @@
+/* Styles for VotingInterface component */
+.votingContainer {
+    background-color: #2d3748; /* Dark slate */
+    padding: 1.5rem 2rem;
+    border-radius: 8px;
+    border: 1px solid #4a5568;
+    margin-top: 1.5rem;
+}
+
+.title {
+    color: #e2e8f0;
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    border-bottom: 1px solid #4a5568;
+    padding-bottom: 1rem;
+}
+
+.candidateList {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.candidateLabel {
+    display: flex;
+    align-items: center;
+    background-color: #1a202c; /* Slightly darker background */
+    padding: 0.8rem 1rem;
+    border-radius: 6px;
+    border: 1px solid #4a5568;
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.candidateLabel:hover {
+    background-color: #4a5568;
+    border-color: #63b3ed;
+}
+
+.radioInput {
+    margin-right: 1rem;
+    accent-color: #63b3ed; /* Style the radio button color */
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+}
+
+.candidateImage {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 1rem;
+    border: 2px solid #4a5568;
+}
+
+.candidateName {
+    color: #cbd5e0;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.errorMessage,
+.successMessage {
+    text-align: center;
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    border-radius: 6px;
+    font-weight: 500;
+}
+
+.errorMessage {
+    color: #feb2b2; /* Light red text */
+    background-color: rgba(229, 62, 62, 0.2); /* Red background */
+    border: 1px solid #e53e3e;
+}
+
+.successMessage {
+    color: #9ae6b4; /* Light green text */
+    background-color: rgba(72, 187, 120, 0.2); /* Green background */
+    border: 1px solid #38a169;
+}
+
+.submitButton {
+    display: block;
+    width: 100%;
+    padding: 0.8rem 1.5rem;
+    background-color: #4299e1; /* Blue */
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.submitButton:hover:not(:disabled) {
+    background-color: #3182ce; /* Darker blue */
+}
+
+.submitButton:disabled {
+    background-color: #4a5568; /* Gray when disabled */
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+/* Styles for Yes/No Choices */
+.choiceOptions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.yesNoButtonContainer {
+    display: flex;
+    flex-direction: row; /* Horizontal layout */
+    justify-content: center;
+    gap: 30px; /* Increased space between buttons */
+    width: 100%;
+    max-width: 500px; /* Limit container width for better control */
+    margin: 0 auto;
+}
+
+.choiceButton {
+    background-color: #4a5568;
+    color: white;
+    border: 1px solid #718096;
+    padding: 15px 25px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: all 0.2s ease;
+    min-width: 180px; /* Significantly wider buttons */
+    flex: 1; /* Allow buttons to grow equally */
+    text-align: center;
+    font-weight: 500;
+}
+
+.choiceButton:hover:not(:disabled) {
+    background-color: #2d3748;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.choiceButton.selected {
+    background-color: #38a169; /* Green for selected */
+    border-color: #2f855a;
+    color: white;
+}
+
+/* Styles for Rating Scale */
+.ratingOptions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.ratingOptions p {
+    font-size: 1.1rem;
+    color: #e2e8f0;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* Old numeric rating scale - keeping for backward compatibility */
+.ratingScale {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    gap: 8px; /* Space between rating buttons */
+}
+
+.ratingButton {
+    background-color: #4a5568;
+    color: white;
+    border: 1px solid #718096;
+    padding: 10px 15px;
+    border-radius: 50%; /* Circular buttons */
+    cursor: pointer;
+    font-size: 1rem;
+    min-width: 40px; /* Ensure circle is not too small */
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.ratingButton:hover:not(:disabled) {
+    background-color: #2d3748;
+    transform: translateY(-1px);
+}
+
+.ratingButton.selected {
+    background-color: #dd6b20; /* Orange for selected rating */
+    border-color: #c05621;
+    color: white;
+}
+
+/* New Star Rating System */
+.ratingStars {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+
+.starButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    transition: transform 0.2s;
+}
+
+.starButton:hover:not(:disabled) {
+    transform: scale(1.2);
+}
+
+.starButton:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+.starIcon {
+    font-size: 2rem;
+    color: #4a5568; /* Default unselected color */
+    display: inline-block;
+    transition: color 0.2s ease;
+}
+
+.selectedStar .starIcon {
+    color: #f6e05e; /* Yellow/gold for selected stars */
+    text-shadow: 0 0 5px rgba(246, 224, 94, 0.7);
+}
+
+.ratingLabel {
+    color: #cbd5e0;
+    font-size: 1rem;
+    margin-top: 10px;
+    min-height: 24px; /* Reserve space to prevent layout shift */
+    text-align: center;
+}
+
+/* Styles for Image-Based Options */
+.imageOptionsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+.imageOptionCard {
+    background-color: #2d3748; /* Slightly lighter than main container */
+    border: 2px solid #4a5568;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.imageOptionCard:hover {
+    border-color: #63b3ed; /* Light blue on hover */
+    transform: translateY(-2px);
+}
+
+.imageOptionCard.selectedImage {
+    border-color: #38a169; /* Green border for selected */
+    box-shadow: 0 0 10px rgba(56, 161, 105, 0.7);
+}
+
+.optionImagePreview {
+    width: 100%;
+    max-height: 120px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 8px;
+}
+
+.imageOptionCard p {
+    font-size: 0.9rem;
+    color: #cbd5e0; /* Lighter text for dark cards */
+    margin: 0;
+    word-break: break-word;
+}
+
+/* Responsive adjustments for voting options */
+@media (max-width: 600px) {
+    .yesNoButtonContainer {
+        gap: 20px; /* Slightly reduce gap on smaller screens */
+    }
+    
+    .choiceButton {
+        padding: 12px 20px;
+        font-size: 1rem;
+        min-width: 140px; /* Smaller but still substantial width */
+    }
+    
+    .ratingButton {
+        padding: 8px 12px;
+        font-size: 0.95rem;
+        min-width: 35px;
+        height: 35px;
+    }
+    .imageOptionsGrid {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 10px;
+    }
+    .optionImagePreview {
+        max-height: 100px;
+    }
+}
+
+/* Further adjustments for very small screens */
+@media (max-width: 400px) {
+    .yesNoButtonContainer {
+        flex-direction: column; /* Stack on very small screens */
+        gap: 15px;
+    }
+    
+    .choiceButton {
+        width: 100%;
+        min-width: unset;
+    }
+}
+
+/* --- NEW: Responsive adjustments --- */
+@media (max-width: 480px) {
+    .votingContainer {
+        padding: 1rem 1.2rem;
+    }
+    .title {
+        font-size: 1.2rem;
+    }
+    .candidateLabel {
+        padding: 0.6rem 0.8rem;
+    }
+    .radioInput {
+        margin-right: 0.8rem;
+        width: 16px;
+        height: 16px;
+    }
+    .candidateImage {
+        width: 35px;
+        height: 35px;
+        margin-right: 0.8rem;
+    }
+    .candidateName {
+        font-size: 0.9rem;
+    }
+    .submitButton {
+        padding: 0.7rem;
+        font-size: 0.95rem;
+    }
+    .errorMessage,
+    .successMessage {
+        font-size: 0.9rem;
+        padding: 0.6rem;
+    }
+}
+/* --- END NEW --- */
+
+.messageContainer {
+    text-align: center;
+    padding: 2rem;
+    background: rgba(17, 24, 39, 0.7);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 1rem;
+}
+
+.infoMessage {
+    color: #94a3b8;
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+}
+
+.notificationMessage {
+    background: rgba(79, 70, 229, 0.15);
+    border: 1px solid rgba(79, 70, 229, 0.3);
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    animation: fadeIn 0.5s ease;
+}
+
+.notificationMessage p {
+    color: #818cf8;
+    margin: 0.5rem 0;
+}
+
+.viewResultsButton {
+    background: linear-gradient(to right, #4f46e5, #6366f1);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.viewResultsButton:hover {
+    background: linear-gradient(to right, #4338ca, #4f46e5);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.actionButtonsContainer {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.refreshButton {
+    background: linear-gradient(to right, #374151, #4B5563);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 120px;
+}
+
+.refreshButton:hover:not(:disabled) {
+    background: linear-gradient(to right, #4B5563, #6B7280);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(75, 85, 99, 0.3);
+}
+
+.refreshButton:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* RTL Support for Voting Interface */
+:global(html[dir="rtl"]) .title {
+  text-align: right;
+}
+
+:global(html[dir="rtl"]) .candidateLabel {
+  flex-direction: row-reverse;
+}
+
+:global(html[dir="rtl"]) .radioInput {
+  margin-right: 0;
+  margin-left: 1rem;
+}
+
+:global(html[dir="rtl"]) .candidateImage {
+  margin-right: 0;
+  margin-left: 1rem;
+}
+
+:global(html[dir="rtl"]) .candidateName {
+  text-align: right;
+}
+
+:global(html[dir="rtl"]) .errorMessage,
+:global(html[dir="rtl"]) .successMessage {
+  text-align: center;
+}
+
+/* RTL for Yes/No Choices */
+:global(html[dir="rtl"]) .choiceOptions {
+  flex-direction: row-reverse;
+}
+
+/* RTL for Rating Options */
+:global(html[dir="rtl"]) .ratingOptions p {
+  text-align: right;
+}
+
+:global(html[dir="rtl"]) .ratingStars {
+  flex-direction: row-reverse;
+}
+
+:global(html[dir="rtl"]) .ratingLabel {
+  text-align: center;
+}
+
+/* RTL for Image-Based Options */
+:global(html[dir="rtl"]) .imageOptionCard p {
+  text-align: right;
+}
+
+/* RTL for Messages */
+:global(html[dir="rtl"]) .messageContainer {
+  text-align: right;
+}
+
+:global(html[dir="rtl"]) .infoMessage {
+  text-align: right;
+}
+
+:global(html[dir="rtl"]) .notificationMessage p {
+  text-align: right;
+}
+
+/* Mobile RTL adjustments */
+@media (max-width: 600px) {
+  :global(html[dir="rtl"]) .candidateLabel {
+    flex-direction: row-reverse;
+  }
+}
+
+@media (max-width: 400px) {
+  :global(html[dir="rtl"]) .yesNoButtonContainer {
+    flex-direction: column;
+  }
+}

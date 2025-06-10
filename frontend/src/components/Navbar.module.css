@@ -1,0 +1,757 @@
+/* Modern Sleek Navbar Styles */
+.header {
+  background-color: rgba(17, 24, 39, 0.85); /* Darker, more transparent */
+  -webkit-backdrop-filter: blur(10px); /* Enhanced blur */
+  backdrop-filter: blur(10px);
+  padding: 0.8rem 6%;
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05); /* Subtle border */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.navContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* RTL navbar container - wider for Arabic text */
+:global(html[dir="rtl"]) .navContainer {
+  max-width: 1600px; /* Wider container for Arabic text */
+}
+
+.logo {
+  color: #f3f4f6;
+  text-decoration: none;
+  font-size: 1.7rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  background: linear-gradient(90deg, #3b82f6, #60a5fa); /* Blue gradient */
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: translateY(-1px);
+  text-shadow: 0 4px 8px rgba(59, 130, 246, 0.3);
+}
+
+.navLink {
+  color: #d1d5db;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 0.5rem 0;
+  position: relative;
+  transition: color 0.3s ease-in-out;
+  letter-spacing: 0.3px;
+}
+
+.navLink::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(90deg, #3b82f6, #60a5fa); /* Blue gradient */
+  transition: width 0.3s ease-in-out;
+  border-radius: 2px;
+}
+
+.navLink:hover,
+.navLink.active {
+  color: #f3f4f6; /* Brighter white on hover/active */
+}
+
+.navLink:hover::after,
+.navLink.active::after {
+  width: 100%; /* Full underline on hover/active */
+}
+
+/* Modern logout button */
+.logoutButton {
+  background: transparent;
+  color: #d1d5db;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  margin-left: 0.5rem;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.logoutButton::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.7s ease;
+  z-index: -1;
+}
+
+.logoutButton:hover::before {
+  left: 100%;
+}
+
+.logoutButton:hover {
+  background-color: #ef4444; /* Red background on hover */
+  color: #ffffff;
+  border-color: #ef4444;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(239, 68, 68, 0.25);
+}
+
+.logoutButton:active {
+  transform: translateY(0);
+}
+
+/* Mobile Menu Styles */
+.mobileMenuButton {
+  display: none;
+  background: none;
+  border: none;
+  color: #d1d5db;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 1100;
+  transition: color 0.3s ease;
+}
+
+.mobileMenuButton:hover {
+  color: #f3f4f6;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .mobileMenuButton {
+    display: block;
+  }
+
+  .nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: calc(0.8rem * 2 + 1.7rem + 1px);
+    left: 0;
+    width: 100%;
+    background-color: rgba(17, 24, 39, 0.95);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    padding: 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+    gap: 0;
+    border-bottom: none;
+    z-index: 1000; /* Ensure dropdown appears above other content */
+  }
+
+  .navMobileOpen {
+     max-height: 80vh; /* Use viewport height instead of fixed height */
+     padding: 1.5rem 0;
+     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+     overflow-y: auto; /* Allow scrolling for many menu items */
+  }
+
+  .navLink {
+    padding: 0.8rem 0;
+    width: 80%;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    font-size: 0.95rem;
+  }
+   
+  .navLink:last-of-type {
+     border-bottom: none;
+  }
+   
+  .navLink::after {
+     display: none;
+  }
+   
+  .navLink.active {
+     color: #60a5fa;
+  }
+
+  .logoutButton {
+    margin-top: 1rem;
+    margin-left: 0;
+    width: 80%;
+    padding: 0.8rem 1rem;
+    font-size: 0.95rem;
+    background: linear-gradient(90deg, #ef4444, #f87171);
+    color: white;
+    border: none;
+  }
+
+  .header {
+    padding: 0.8rem 4%;
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+  }
+  
+  /* Improved dropdown display on mobile */
+  .dropdownContainer {
+    width: 80%;
+    text-align: center;
+    margin-bottom: 0.5rem;
+  }
+  
+  .dropdownTrigger {
+    width: 100%;
+    padding: 0.8rem 0;
+    justify-content: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+  
+  .dropdown {
+    position: static;
+    transform: none;
+    background: transparent;
+    box-shadow: none;
+    border: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    width: 100%;
+    max-height: 0;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease, opacity 0.3s ease, visibility 0s linear 0.3s;
+  }
+  
+  .dropdown.show {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    max-height: 300px;
+    padding: 0.5rem 0;
+    transition: max-height 0.3s ease, padding 0.3s ease, opacity 0.3s ease, visibility 0s linear 0s;
+  }
+  
+  .dropdownContent {
+    padding: 0;
+    width: 100%;
+  }
+  
+  .dropdownLink {
+    padding: 0.8rem 0;
+    text-align: center;
+    background: rgba(17, 24, 39, 0.3);
+    margin: 0.4rem 0;
+    border-radius: 6px;
+    width: 100%;
+  }
+  
+  /* Fix for RTL on mobile */
+  :global(html[dir="rtl"]) .nav {
+    right: 0;
+    left: 0;
+  }
+  
+  :global(html[dir="rtl"]) .dropdownContainer {
+    margin-left: 0;
+  }
+  
+  :global(html[dir="rtl"]) .dropdownTrigger {
+    padding: 0.8rem 0;
+  }
+  
+  :global(html[dir="rtl"]) .dropdown,
+  :global(html[dir="rtl"]) .dropdown.show {
+    left: auto;
+    right: auto;
+    transform: none;
+  }
+  
+  :global(html[dir="rtl"]) .dropdownLink {
+    text-align: center;
+    padding: 0.8rem 0;
+  }
+  
+  /* Fix for small mobile screens */
+  @media (max-width: 380px) {
+    .header {
+      padding: 0.8rem 2%;
+    }
+    
+    .logo {
+      font-size: 1.3rem;
+    }
+    
+    .navLink, 
+    .dropdownTrigger,
+    .logoutButton,
+    .dropdownLink {
+      font-size: 0.9rem;
+    }
+    
+    .navMobileOpen {
+      padding: 1rem 0;
+    }
+  }
+}
+
+/* Desktop Styles */
+@media (min-width: 769px) {
+  .nav {
+    display: flex;
+    align-items: center;
+    gap: 1.8rem;
+    position: static;
+    flex-direction: row;
+    width: auto;
+    background-color: transparent;
+    padding: 0;
+    box-shadow: none;
+    max-height: none;
+    overflow: visible;
+    border-bottom: none;
+  }
+
+  /* RTL nav - increase gap between items for Arabic text */
+  :global(html[dir="rtl"]) .nav {
+    gap: 2.5rem; /* Increased gap for Arabic text */
+  }
+
+  .navLink {
+     width: auto;
+     padding: 0.5rem 0;
+     border-bottom: none;
+     font-size: 0.95rem;
+  }
+   
+  .navLink::after {
+     display: block;
+  }
+
+  .logoutButton {
+    margin-top: 0;
+    margin-left: 0.5rem;
+    width: auto;
+    padding: 0.5rem 1rem;
+    font-size: 0.95rem;
+  }
+}
+
+/* Dropdown styles */
+.dropdownContainer {
+  position: relative;
+  display: inline-block;
+}
+
+/* RTL dropdown container - more space for Arabic text */
+:global(html[dir="rtl"]) .dropdownContainer {
+  margin-left: 0.5rem;
+}
+
+.dropdownTrigger {
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 0.5rem 0;
+  color: #d1d5db;
+  transition: color 0.3s ease-in-out;
+  position: relative;
+}
+
+/* RTL dropdown trigger - adjust font size for Arabic */
+:global(html[dir="rtl"]) .dropdownTrigger {
+  font-size: 1.05rem; /* Slightly larger font for Arabic */
+  font-family: 'Tajawal', sans-serif;
+}
+
+.dropdownTrigger::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(90deg, #3b82f6, #60a5fa);
+  transition: width 0.3s ease-in-out;
+  border-radius: 2px;
+}
+
+.dropdownTrigger:hover,
+.dropdownTrigger:focus {
+  color: #f3f4f6;
+  outline: none;
+}
+
+.dropdownTrigger:hover::after {
+  width: 100%;
+}
+
+.dropdownIcon {
+  margin-left: 6px;
+  font-size: 0.8rem;
+  transition: transform 0.3s ease;
+}
+
+/* Improved dropdown positioning */
+.dropdown {
+  position: absolute;
+  top: calc(100% + 5px); /* Add a small gap between trigger and dropdown */
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  background: rgba(31, 41, 55, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  min-width: 180px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 1010;
+  overflow: hidden;
+}
+
+.dropdown.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+.dropdownContent {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem 0;
+}
+
+.dropdownLink {
+  color: #d1d5db;
+  text-decoration: none;
+  padding: 0.8rem 1.2rem;
+  transition: all 0.2s ease;
+  font-size: 0.95rem;
+}
+
+.dropdownLink:hover {
+  background: rgba(59, 130, 246, 0.1);
+  color: #f3f4f6;
+}
+
+/* RTL specific dropdown adjustments */
+:global(html[dir="rtl"]) .dropdownIcon {
+  margin-left: 0;
+  margin-right: 6px;
+}
+
+:global(html[dir="rtl"]) .dropdownContent {
+  text-align: right;
+}
+
+/* RTL dropdown styles */
+:global(html[dir="rtl"]) .dropdown {
+  min-width: 200px; /* Wider dropdown for Arabic text */
+}
+
+:global(html[dir="rtl"]) .dropdownLink {
+  font-family: 'Tajawal', sans-serif;
+  font-size: 1.05rem;
+  padding: 0.8rem 1.4rem; /* More horizontal padding for Arabic */
+}
+
+/* Fix for RTL dropdown positioning */
+@media (min-width: 769px) {
+  :global(html[dir="rtl"]) .dropdown {
+    left: auto;
+    right: 50%;
+    transform: translateX(50%) translateY(10px);
+  }
+  
+  :global(html[dir="rtl"]) .dropdown.show {
+    transform: translateX(50%) translateY(0);
+  }
+}
+
+/* Fix for mobile RTL dropdowns */
+@media (max-width: 768px) {
+  :global(html[dir="rtl"]) .dropdown,
+  :global(html[dir="rtl"]) .dropdown.show {
+    left: auto;
+    right: auto;
+    transform: none;
+  }
+  
+  :global(html[dir="rtl"]) .dropdownLink {
+    text-align: center;
+    padding: 0.8rem 0;
+  }
+}
+
+/* Admin styles */
+.adminButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #60a5fa;
+  font-weight: 600;
+}
+
+.adminButton:hover {
+  color: #93c5fd;
+}
+
+.adminIcon {
+  font-size: 1.1rem;
+  transition: transform 0.3s ease;
+}
+
+.adminButton:hover .adminIcon {
+  transform: rotate(15deg);
+}
+
+/* Mobile admin styles */
+@media (max-width: 768px) {
+  .adminButton {
+    justify-content: center;
+  }
+}
+
+/* Language selector styles */
+.languageSelector {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.languageIcon {
+  font-size: 1.2rem;
+}
+
+.languageButton {
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  transition: background-color 0.3s;
+  display: block;
+}
+
+.languageButton:hover {
+  background-color: var(--color-primary-light);
+}
+
+.activeLanguage {
+  background-color: var(--color-primary-light);
+  font-weight: bold;
+}
+
+/* RTL specific navbar adjustments */
+:global(html[dir="rtl"]) .logoutButton {
+  margin-left: 0;
+  margin-right: 0.5rem;
+  font-family: 'Tajawal', sans-serif;
+  font-size: 1.05rem;
+}
+
+:global(html[dir="rtl"]) .languageButton {
+  text-align: right;
+  font-family: 'Tajawal', sans-serif;
+}
+
+:global(html[dir="rtl"]) .navLink {
+  margin-left: 0;
+  margin-right: 0;
+  font-family: 'Tajawal', sans-serif;
+  font-size: 1.05rem;
+  letter-spacing: 0;
+}
+
+:global(html[dir="rtl"]) .dropdownContent {
+  left: auto;
+  right: 0;
+}
+
+:global(html[dir="rtl"]) .header {
+  padding: 0.8rem 4%; /* Adjust padding for RTL */
+}
+
+/* Enhanced RTL support for mobile */
+@media (max-width: 768px) {
+  :global(html[dir="rtl"]) .logoutButton {
+    margin-right: 0;
+    width: 80%;
+    text-align: center;
+  }
+  
+  :global(html[dir="rtl"]) .navLink {
+    width: 80%;
+    text-align: center;
+  }
+  
+  :global(html[dir="rtl"]) .dropdownTrigger {
+    width: 80%;
+    justify-content: center;
+  }
+}
+
+/* Enhanced RTL support for desktop */
+@media (min-width: 769px) {
+  :global(html[dir="rtl"]) .logoutButton {
+    margin-left: 0;
+    margin-right: 0.5rem;
+    padding: 0.5rem 1.2rem; /* Slightly wider padding for Arabic text */
+  }
+  
+  :global(html[dir="rtl"]) .navLink {
+    padding: 0.5rem 0.2rem; /* Add some horizontal padding for Arabic */
+  }
+  
+  :global(html[dir="rtl"]) .logo {
+    font-size: 1.8rem; /* Slightly larger logo for Arabic */
+  }
+}
+
+/* Make the navbar container even wider on larger screens for Arabic */
+@media (min-width: 1200px) {
+  :global(html[dir="rtl"]) .navContainer {
+    max-width: 1800px; /* Even wider on large screens */
+  }
+}
+
+/* Dropdown icon rotation animation */
+.dropdownContainer:has(.dropdown.show) .dropdownIcon {
+  transform: rotate(180deg);
+}
+
+/* Add styles for medium-sized devices */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .nav {
+    gap: 1.2rem; /* Smaller gap on medium screens */
+  }
+  
+  .navLink, 
+  .dropdownTrigger {
+    font-size: 0.9rem; /* Slightly smaller font on medium screens */
+  }
+  
+  :global(html[dir="rtl"]) .nav {
+    gap: 1.8rem; /* Adjusted gap for RTL on medium screens */
+  }
+  
+  .logoutButton {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+  }
+  
+  .header {
+    padding: 0.8rem 3%;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 350px) {
+  .header {
+    padding: 0.7rem 2%;
+  }
+  
+  .logo {
+    font-size: 1.2rem;
+  }
+  
+  .navLink, 
+  .dropdownTrigger,
+  .logoutButton,
+  .dropdownLink {
+    font-size: 0.85rem;
+    padding: 0.7rem 0;
+  }
+  
+  .navMobileOpen {
+    padding: 0.8rem 0;
+  }
+  
+  .mobileMenuButton {
+    font-size: 1.3rem;
+  }
+}
+
+/* Fix for Safari and iOS devices */
+@supports (-webkit-touch-callout: none) {
+  .nav {
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .navMobileOpen {
+    max-height: 85vh; /* Slightly taller for iOS */
+  }
+  
+  .dropdown.show {
+    -webkit-transform: translateX(-50%) translateY(0);
+    transform: translateX(-50%) translateY(0);
+  }
+  
+  :global(html[dir="rtl"]) .dropdown.show {
+    -webkit-transform: translateX(50%) translateY(0);
+    transform: translateX(50%) translateY(0);
+  }
+}
+
+/* Specific styles for laptops with screens around 1024px */
+@media (min-width: 1000px) and (max-width: 1100px) {
+  .navContainer {
+    max-width: 960px; /* More appropriate container width for 1024px screens */
+  }
+  
+  .nav {
+    gap: 1.4rem; /* Optimized spacing for 1024px screens */
+  }
+  
+  .navLink, 
+  .dropdownTrigger {
+    font-size: 0.92rem; /* Optimized font size for 1024px screens */
+  }
+  
+  .logoutButton {
+    padding: 0.45rem 0.9rem;
+    font-size: 0.92rem;
+  }
+  
+  /* RTL specific adjustments for 1024px */
+  :global(html[dir="rtl"]) .navContainer {
+    max-width: 980px; /* Slightly wider for Arabic text */
+  }
+  
+  :global(html[dir="rtl"]) .nav {
+    gap: 1.9rem; /* Wider gap for Arabic text on 1024px screens */
+  }
+  
+  :global(html[dir="rtl"]) .navLink,
+  :global(html[dir="rtl"]) .dropdownTrigger {
+    font-size: 1rem; /* Slightly larger font for Arabic on 1024px screens */
+  }
+}

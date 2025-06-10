@@ -1,0 +1,619 @@
+/* Modern Sleek User Management Styles */
+.pageContainer {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #111827; /* Darker background */
+    background-image: linear-gradient(135deg, #111827 0%, #1f2937 100%); /* Gradient background */
+    color: #f3f4f6;
+}
+
+.mainContent {
+    flex-grow: 1;
+    padding: 3rem 6%; /* Increased padding */
+    color: #f3f4f6; /* Lighter text for better contrast */
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.title {
+    color: #f3f4f6;
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    text-align: center;
+    letter-spacing: 0.5px;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, #3b82f6, #60a5fa);
+    border-radius: 3px;
+}
+
+.section {
+    margin-bottom: 3rem;
+    background: rgba(31, 41, 55, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 16px;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 
+                0 10px 10px -5px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 25px 30px -5px rgba(0, 0, 0, 0.4), 
+                0 10px 10px -5px rgba(0, 0, 0, 0.3);
+}
+
+.sectionTitle {
+    color: #f3f4f6;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-bottom: 0.8rem;
+    font-weight: 600;
+}
+
+.sectionTitle::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #3b82f6, #60a5fa);
+    border-radius: 3px;
+}
+
+/* Error container */
+.errorContainer {
+    background-color: rgba(239, 68, 68, 0.15);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    border-radius: 8px;
+    padding: 1rem 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.errorText {
+    color: #f87171;
+    text-align: center;
+    font-size: 1rem;
+    margin: 0;
+}
+
+/* Loading state */
+.loadingContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+}
+
+.loadingText {
+    color: #93c5fd;
+    font-size: 1.2rem;
+    position: relative;
+    padding-left: 2rem;
+}
+
+.loadingText::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(147, 197, 253, 0.3);
+    border-top-color: #93c5fd;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: translateY(-50%) rotate(360deg); }
+}
+
+/* Empty state */
+.emptyContainer {
+    background-color: rgba(31, 41, 55, 0.5);
+    border-radius: 8px;
+    padding: 2rem;
+    text-align: center;
+    border: 1px dashed rgba(255, 255, 255, 0.1);
+}
+
+.emptyText {
+    color: #93c5fd;
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+/* Table container */
+.tableContainer {
+    overflow-x: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 1.5rem;
+}
+
+.userTable {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.userTable th,
+.userTable td {
+    padding: 1rem 1.2rem;
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.userTable th {
+    background-color: rgba(17, 24, 39, 0.8);
+    color: #93c5fd;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+}
+
+.userTable tr {
+    background-color: rgba(31, 41, 55, 0.7);
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.userTable tr:hover {
+    background-color: rgba(55, 65, 81, 0.8);
+    transform: translateY(-2px);
+}
+
+.userTable tr.activeRow {
+    background-color: rgba(55, 65, 81, 0.9);
+}
+
+/* Expanded row details */
+.detailsRow td {
+    padding: 0;
+    background-color: rgba(17, 24, 39, 0.9);
+    border-top: none;
+}
+
+.userDetails {
+    padding: 1.5rem;
+    animation: fadeIn 0.3s ease;
+}
+
+.userDetailsFlex {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+}
+
+.profileImageContainer {
+    flex: 0 0 120px;
+}
+
+.profileImage {
+    width: 120px;
+    height: 120px;
+    border-radius: 10px;
+    object-fit: cover;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profileImage:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+.profileImagePlaceholder {
+    width: 120px;
+    height: 120px;
+    border-radius: 10px;
+    background: linear-gradient(45deg, #3b82f6, #60a5fa);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    font-weight: 600;
+    color: white;
+}
+
+.detailsGrid {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.detailItem {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    background-color: rgba(17, 24, 39, 0.5);
+    padding: 0.8rem 1rem;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.detailItem:hover {
+    transform: translateY(-3px);
+    background-color: rgba(17, 24, 39, 0.7);
+}
+
+.detailItem strong {
+    color: #93c5fd;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.detailItem span {
+    color: #f3f4f6;
+    font-size: 1rem;
+}
+
+.downloadLink {
+    color: #93c5fd;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.downloadLink::after {
+    content: '↓';
+    font-size: 1.1rem;
+}
+
+.downloadLink:hover {
+    color: #60a5fa;
+    text-decoration: underline;
+}
+
+/* Role badge */
+.roleBadge {
+    display: inline-block;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+.admin {
+    background-color: rgba(239, 68, 68, 0.2);
+    color: #f87171;
+    border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.voter {
+    background-color: rgba(16, 185, 129, 0.2);
+    color: #34d399;
+    border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.candidate {
+    background-color: rgba(245, 158, 11, 0.2);
+    color: #fbbf24;
+    border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+/* Expand icon */
+.expandIconHeader {
+    width: 50px;
+    text-align: center;
+}
+
+.expandIconCell {
+    width: 50px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.expandIcon {
+    color: #93c5fd;
+    font-size: 1.1rem;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.expandIconCell:hover .expandIcon {
+    color: #60a5fa;
+    transform: translateY(-2px);
+}
+
+/* Action buttons */
+.actionsCell {
+    text-align: right;
+    white-space: nowrap;
+}
+
+.actionButton {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    margin-left: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.actionButton::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.7s ease;
+    z-index: 1;
+}
+
+.actionButton:hover::before {
+    left: 100%;
+}
+
+.actionButton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.approveButton {
+    background-color: #10b981;
+    color: white;
+}
+
+.approveButton:hover {
+    background-color: #059669;
+}
+
+.rejectButton {
+    background-color: #ef4444;
+    color: white;
+}
+
+.rejectButton:hover {
+    background-color: #dc2626;
+}
+
+.actionButton:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.adminLabel {
+    display: inline-block;
+    padding: 0.3rem 0.8rem;
+    background-color: rgba(107, 114, 128, 0.2);
+    color: #9ca3af;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    border: 1px solid rgba(107, 114, 128, 0.3);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .userDetailsFlex {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+    }
+    
+    .detailsGrid {
+        width: 100%;
+        grid-template-columns: 1fr;
+    }
+    
+    .profileImageContainer {
+        margin-bottom: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .mainContent {
+        padding: 2rem 4%;
+    }
+    
+    .title {
+        font-size: 2rem;
+    }
+    
+    .sectionTitle {
+        font-size: 1.5rem;
+    }
+    
+    .section {
+        padding: 1.5rem;
+    }
+    
+    /* Table mobile adjustments */
+    .userTable thead {
+        display: none;
+    }
+    
+    .userTable, 
+    .userTable tbody, 
+    .userTable tr, 
+    .userTable td {
+        display: block;
+        width: 100%;
+    }
+    
+    .userTable tr {
+        margin-bottom: 1rem;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 8px;
+        overflow: hidden;
+        position: relative;
+        padding-top: 40px; /* Space for expand icon */
+    }
+    
+    .expandIconCell {
+        position: absolute;
+        top: 5px;
+        right: 10px;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+    }
+    
+    .userTable td {
+        text-align: right;
+        position: relative;
+        padding-left: 50%;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    
+    .userTable td:before {
+        content: attr(data-label);
+        position: absolute;
+        left: 1rem;
+        width: 45%;
+        white-space: nowrap;
+        font-weight: 600;
+        color: #93c5fd;
+        text-align: left;
+        font-size: 0.9rem;
+    }
+    
+    .userTable td:last-child {
+        border-bottom: none;
+    }
+    
+    .actionsCell {
+        display: flex;
+        justify-content: flex-end;
+        gap: 0.5rem;
+        padding: 1rem;
+    }
+    
+    .actionButton {
+        margin-left: 0;
+        flex: 1;
+        text-align: center;
+    }
+    
+    .detailsRow td {
+        padding: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .mainContent {
+        padding: 1.5rem 3%;
+    }
+    
+    .title {
+        font-size: 1.8rem;
+    }
+    
+    .sectionTitle {
+        font-size: 1.3rem;
+    }
+    
+    .userTable td {
+        padding-left: 45%;
+        font-size: 0.9rem;
+    }
+    
+    .userTable td:before {
+        width: 40%;
+        font-size: 0.85rem;
+    }
+    
+    .detailItem {
+        padding: 0.7rem;
+    }
+    
+    .detailItem strong {
+        font-size: 0.8rem;
+    }
+    
+    .detailItem span {
+        font-size: 0.9rem;
+    }
+}
+
+/* Role Group Headers */
+.roleGroupHeader {
+    background-color: rgba(17, 24, 39, 0.95) !important;
+    transform: none !important;
+}
+
+.roleGroupHeader:hover {
+    background-color: rgba(17, 24, 39, 0.95) !important;
+    transform: none !important;
+}
+
+.roleGroupHeaderCell {
+    font-weight: 600;
+    color: #93c5fd;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+    padding: 0.8rem 1.2rem !important;
+    background: linear-gradient(90deg, rgba(59, 130, 246, 0.2), transparent);
+    border-left: 4px solid #3b82f6;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+/* Role-specific colors for group headers */
+.roleGroupHeader[data-role="admin"] .roleGroupHeaderCell {
+    border-left-color: #10b981;
+    background: linear-gradient(90deg, rgba(16, 185, 129, 0.2), transparent);
+    color: #6ee7b7;
+}
+
+.roleGroupHeader[data-role="candidate"] .roleGroupHeaderCell {
+    border-left-color: #f59e0b;
+    background: linear-gradient(90deg, rgba(245, 158, 11, 0.2), transparent);
+    color: #fcd34d;
+}
+
+.roleGroupHeader[data-role="voter"] .roleGroupHeaderCell {
+    border-left-color: #8b5cf6;
+    background: linear-gradient(90deg, rgba(139, 92, 246, 0.2), transparent);
+    color: #c4b5fd;
+}

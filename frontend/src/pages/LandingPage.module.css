@@ -1,0 +1,963 @@
+/* Styles specific to the LandingPage component */
+
+.landingPage {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+  background-color: #111827; /* Darker background for consistency */
+  color: #e2e8f0;
+}
+
+/* Header styles removed - moved to Navbar.module.css */
+/* .header { ... } */
+/* .logo { ... } */
+/* .nav a { ... } */
+/* .nav a:hover { ... } */
+
+
+/* Call-to-Action Button Style (used in Hero, etc.) */
+.ctaButton {
+  /* Styles for buttons NOT in the navbar */
+  background-image: linear-gradient(to right, #4299e1 0%, #3182ce 51%, #4299e1 100%);
+  background-size: 200% auto;
+  color: #ffffff;
+  padding: 0.7rem 1.4rem;
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(49, 130, 206, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* RTL support for CTA button */
+:global(html[dir="rtl"]) .ctaButton {
+  font-family: 'Tajawal', 'Arial', sans-serif;
+  letter-spacing: 0;
+}
+
+.ctaButton:hover {
+  background-position: right center;
+  box-shadow: 0 6px 15px rgba(49, 130, 206, 0.4);
+  transform: translateY(-2px);
+}
+
+.ctaButton:active {
+  transform: translateY(0px);
+  box-shadow: 0 2px 5px rgba(49, 130, 206, 0.3);
+}
+
+.ctaButton.large { /* Modifier class for Hero button */
+  padding: 1rem 2.25rem;
+  font-size: 1rem;
+  margin-top: 2rem;
+  font-weight: 700;
+  border-radius: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* RTL support for large CTA button */
+:global(html[dir="rtl"]) .ctaButton.large {
+  letter-spacing: 0;
+  font-family: 'Tajawal', 'Arial', sans-serif;
+}
+
+
+/* Hero Section */
+.hero {
+  /* Update hero to use flex row for image and text */
+  background: linear-gradient(135deg, #1e3a8a 0%, #111827 100%); /* Richer blue gradient */
+  color: #e2e8f0;
+  padding: 8rem 6% 8rem 6%; /* More vertical space */
+  display: flex; /* Use flexbox */
+  align-items: center; /* Vertically center items */
+  justify-content: space-between; /* Space between text and image */
+  gap: 4rem; /* Increased gap for better spacing */
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  position: relative;
+  overflow: hidden; /* For animated shapes */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.heroContent {
+  flex: 1; /* Allow text content to take available space */
+  min-width: 300px; /* Minimum width before wrapping */
+  text-align: left; /* Align text left */
+  position: relative;
+  z-index: 2; /* Place above the animated shapes */
+}
+
+/* RTL support for hero content */
+:global(html[dir="rtl"]) .heroContent {
+  text-align: right;
+}
+
+.hero h1 {
+  font-size: 3.5rem; /* Slightly larger heading */
+  margin-bottom: 1.5rem;
+  font-weight: 800; /* Bolder font */
+  color: #ffffff;
+  max-width: 700px; /* Wider for longer phrases */
+  line-height: 1.2;
+  background: linear-gradient(90deg, #ffffff, #93c5fd);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* RTL support for hero heading */
+:global(html[dir="rtl"]) .hero h1 {
+  font-family: 'Tajawal', 'Arial', sans-serif;
+  background: linear-gradient(270deg, #ffffff, #93c5fd);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  max-width: 550px;
+  margin-bottom: 2.5rem;
+  color: #cbd5e0; /* Lighter color for better readability */
+  line-height: 1.7;
+}
+
+/* RTL support for hero paragraph */
+:global(html[dir="rtl"]) .hero p {
+  font-family: 'Tajawal', 'Arial', sans-serif;
+}
+
+.heroImageContainer {
+  flex-basis: 45%; /* Slightly larger image area */
+  max-width: 500px;
+  min-width: 280px;
+  text-align: center;
+  position: relative;
+  z-index: 2; /* Place above the animated shapes */
+  animation: float 6s ease-in-out infinite;
+  filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.3));
+}
+
+.heroImage {
+  width: 100%;
+  height: auto;
+  object-fit: contain; /* Ensure image scales nicely */
+  border-radius: 16px; /* Add rounded corners */
+  transition: transform 0.5s ease;
+}
+
+.heroImage:hover {
+  transform: scale(1.03);
+}
+
+
+/* Features Section */
+.features {
+  background: linear-gradient(to bottom, #111827 0%, #1e293b 100%);
+  padding: 8rem 6%; /* Increased padding */
+  position: relative;
+  overflow: hidden;
+}
+
+.features h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #93c5fd;
+  font-weight: 700;
+  text-align: center;
+  position: relative;
+}
+
+.features h2::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #3b82f6, #60a5fa);
+  margin: 1rem auto 0;
+  border-radius: 2px;
+}
+
+/* Style for the added subtitle */
+.subtitle {
+  color: #a0aec0;
+  max-width: 700px;
+  margin: 0 auto 4rem auto;
+  font-size: 1.2rem;
+  text-align: center;
+  line-height: 1.6;
+}
+
+
+.featureList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
+  margin-top: 1rem;
+}
+
+.featureItem {
+  background: rgba(30, 41, 59, 0.8);
+  padding: 2.5rem;
+  border-radius: 16px;
+  border: 1px solid rgba(74, 85, 104, 0.5);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Icon Styling */
+.featureIconWrapper {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(37, 99, 235, 0.2));
+  border-radius: 50%;
+  padding: 1.25rem;
+  margin-bottom: 1.75rem;
+  display: inline-flex;
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+  transition: all 0.3s ease;
+}
+
+.featureIcon {
+  font-size: 2.25rem;
+  color: #60a5fa;
+  transition: all 0.3s ease;
+}
+
+.featureItem:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  border-color: rgba(96, 165, 250, 0.5);
+}
+
+.featureItem:hover .featureIconWrapper {
+  transform: scale(1.1);
+  box-shadow: 0 0 30px rgba(59, 130, 246, 0.4);
+}
+
+.featureItem:hover .featureIcon {
+  color: #93c5fd;
+}
+
+.featureItem h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: #e2e8f0;
+  font-weight: 700;
+}
+
+.featureItem p {
+  color: #94a3b8;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+/* About Section */
+.about {
+  background: linear-gradient(to bottom, #1e293b 0%, #111827 100%);
+  padding: 8rem 6%;
+  position: relative;
+}
+
+.about h2 {
+  font-size: 2.5rem;
+  margin-bottom: 4rem;
+  color: #93c5fd;
+  font-weight: 700;
+  text-align: center;
+  position: relative;
+}
+
+.about h2::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #3b82f6, #60a5fa);
+  margin: 1rem auto 0;
+  border-radius: 2px;
+}
+
+.aboutContent {
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.aboutText {
+  flex: 1;
+  min-width: 300px;
+  max-width: 600px;
+}
+
+.aboutText p {
+  color: #cbd5e0;
+  font-size: 1.1rem;
+  line-height: 1.9;
+  margin-bottom: 1.75rem;
+}
+
+.aboutImageContainer {
+  flex-basis: 40%;
+  max-width: 450px;
+  min-width: 280px;
+  text-align: center;
+  filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.2));
+  transition: all 0.5s ease;
+}
+
+.aboutImage {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+  border: 4px solid rgba(59, 130, 246, 0.2);
+}
+
+.aboutImageContainer:hover {
+  transform: perspective(1000px) rotateY(5deg) scale(1.03);
+}
+
+
+/* --- START NEW DEVELOPERS SECTION STYLES --- */
+.developers {
+  background: linear-gradient(135deg, #111827 0%, #1e293b 100%);
+  padding: 8rem 6%;
+  text-align: center;
+  position: relative;
+}
+
+.developers h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #93c5fd;
+  font-weight: 700;
+  position: relative;
+}
+
+.developers h2::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #3b82f6, #60a5fa);
+  margin: 1rem auto 0;
+  border-radius: 2px;
+}
+
+.developers .subtitle {
+  color: #a0aec0;
+  max-width: 700px;
+  margin: 0 auto 4rem auto;
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+.developerList {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+  margin-top: 4rem;
+  justify-content: center;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  grid-auto-rows: 1fr;
+  place-items: center;
+}
+
+.developerCard {
+  background: rgba(30, 41, 59, 0.8);
+  padding: 2rem;
+  border-radius: 16px;
+  border: 1px solid rgba(74, 85, 104, 0.5);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 280px;
+  height: 100%;
+  justify-content: space-between;
+  margin: 0 auto;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Target the first developer card (the leader) */
+.developerCard:first-child {
+  grid-column: 1 / -1;
+  justify-self: center;
+  width: 320px;
+  height: auto;
+  margin: auto 2rem auto;
+  margin-top: 0;
+  padding: 2.5rem;
+  border: 1px solid rgba(96, 165, 250, 0.3);
+  background: linear-gradient(135deg, rgba(30, 41, 59, 0.9), rgba(30, 58, 138, 0.6));
+}
+
+.developerCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  border-color: rgba(96, 165, 250, 0.5);
+}
+
+.developerImage {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 0 1.5rem 0;
+  border: 4px solid rgba(59, 130, 246, 0.3);
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.developerCard:hover .developerImage {
+  transform: scale(1.05);
+  border-color: rgba(96, 165, 250, 0.6);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.developerName {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #e2e8f0;
+  margin: 0 0 0.75rem 0;
+}
+
+.developerDescription {
+  font-size: 0.95rem;
+  color: #94a3b8;
+  line-height: 1.6;
+  width: 100%;
+  text-align: center;
+  margin: 0;
+}
+/* --- END NEW DEVELOPERS SECTION STYLES --- */
+
+
+/* Footer styles removed - moved to Footer.module.css */
+/*
+.footer {
+  background-color: #2d3748;
+  color: #a0aec0;
+  text-align: center;
+  padding: 2rem 5%;
+  margin-top: auto;
+  font-size: 0.9rem;
+  border-top: 1px solid #4a5568;
+}
+*/
+
+/* Responsive Adjustments (Example) */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column-reverse; /* Stack image above text */
+    text-align: center; /* Center text on mobile */
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+  .heroContent {
+    text-align: center;
+  }
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+   .hero p {
+    font-size: 1rem;
+  }
+  .aboutContent {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .aboutText {
+     text-align: center;
+  }
+  .developerList {
+    /* --- EDIT: Adjusted grid for 768px --- */
+    grid-template-columns: repeat(2, 1fr); /* Switch to 2 columns */
+    max-width: 600px;
+    gap: 1.5rem;
+    /* align-items: stretch; is inherited */
+  }
+  .developerCard:first-child {
+    grid-column: 1 / -1; /* Leader still spans full width */
+    /* height: auto; /* Reset height if needed for leader on mobile */
+  }
+  /* .developerCard { height: 100%; } /* Inherited */
+
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding: 3rem 4%; /* Reduce padding further */
+    }
+    .hero h1 {
+        font-size: 2rem; /* Reduce font size */
+    }
+    .hero p {
+        font-size: 0.95rem;
+    }
+    .ctaButton.large {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+    }
+    .features, .about, .developers {
+        padding: 4rem 4%; /* Reduce section padding */
+    }
+    .features h2, .about h2, .developers h2 {
+        font-size: 1.8rem;
+    }
+    .subtitle {
+        font-size: 1rem;
+        margin-bottom: 3rem;
+    }
+    .featureList {
+        grid-template-columns: 1fr; /* Stack features */
+        gap: 1.5rem;
+    }
+    .featureItem {
+        padding: 1.5rem;
+    }
+    .aboutContent {
+        gap: 1.5rem;
+    }
+    .aboutText p {
+        font-size: 1rem;
+    }
+    .developerList {
+        grid-template-columns: 1fr; /* Stack developers */
+        max-width: 300px;
+        gap: 1.5rem;
+        /* align-items: stretch; still applies but less relevant for single column */
+    }
+    .developerCard:first-child {
+        grid-column: auto; /* Reset span for single column */
+        margin-bottom: 1.5rem; /* Keep separation */
+        max-width: 250px; /* Match other cards */
+        /* height: auto; /* Reset height */
+    }
+    .developerCard {
+        padding: 1.2rem;
+        /* height: auto; /* Reset height for single column */
+    }
+    .developerImage {
+        width: 80px;
+        height: 80px;
+    }
+    .developerName {
+        font-size: 1rem;
+    }
+    .developerDescription {
+        font-size: 0.8rem;
+    }
+}
+/* --- END NEW --- */
+
+
+/* Add these new animation keyframes at the top of the file */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Add animated shapes */
+.animatedShape {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.2;
+  z-index: 1;
+  filter: blur(40px);
+}
+
+.shape1 {
+  background: linear-gradient(45deg, #3b82f6, #2563eb);
+  width: 300px;
+  height: 300px;
+  top: -100px;
+  left: -50px;
+  animation: float 15s ease-in-out infinite alternate;
+}
+
+.shape2 {
+  background: linear-gradient(45deg, #60a5fa, #3b82f6);
+  width: 250px;
+  height: 250px;
+  bottom: -50px;
+  right: -50px;
+  animation: float 10s ease-in-out infinite alternate-reverse;
+}
+
+/* Additional shape for more visual interest */
+.shape3 {
+  background: linear-gradient(45deg, #93c5fd, #60a5fa);
+  width: 150px;
+  height: 150px;
+  top: 50%;
+  left: 25%;
+  animation: float 12s ease-in-out infinite alternate;
+}
+
+/* Add animated background for sections */
+.features::before,
+.about::before,
+.developers::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(circle at 20% 30%, rgba(59, 130, 246, 0.1) 0%, transparent 30%),
+    radial-gradient(circle at 80% 70%, rgba(96, 165, 250, 0.1) 0%, transparent 30%);
+  z-index: 0;
+  opacity: 0.6;
+}
+
+/* Animation keyframes */
+@keyframes float {
+  0% {
+    transform: translateY(0) translateX(0);
+  }
+  50% {
+    transform: translateY(-20px) translateX(10px);
+  }
+  100% {
+    transform: translateY(0) translateX(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4);
+  }
+  70% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 15px rgba(59, 130, 246, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(59, 130, 246, 0);
+  }
+}
+
+/* Animation timing for section elements */
+.hero .heroContent h1,
+.hero .heroContent p,
+.hero .heroContent .ctaButton,
+.hero .heroImageContainer,
+.features h2,
+.features .subtitle,
+.features .featureItem,
+.about h2,
+.about .subtitle,
+.about .aboutText,
+.about .aboutImageContainer,
+.developers h2,
+.developers .subtitle,
+.developers .developerCard {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* When section becomes visible, animate its children */
+.hero.visible .heroContent h1 {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.1s;
+}
+
+.hero.visible .heroContent p {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.3s;
+}
+
+.hero.visible .heroContent .ctaButton {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.5s;
+}
+
+.hero.visible .heroImageContainer {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.3s;
+}
+
+.features.visible h2,
+.about.visible h2,
+.developers.visible h2 {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.1s;
+}
+
+.features.visible .subtitle,
+.about.visible .subtitle,
+.developers.visible .subtitle {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.2s;
+}
+
+.features.visible .featureItem {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.features.visible .featureItem:nth-child(1) { transition-delay: 0.3s; }
+.features.visible .featureItem:nth-child(2) { transition-delay: 0.4s; }
+.features.visible .featureItem:nth-child(3) { transition-delay: 0.5s; }
+.features.visible .featureItem:nth-child(4) { transition-delay: 0.6s; }
+
+.about.visible .aboutText {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.3s;
+}
+
+.about.visible .aboutImageContainer {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.5s;
+}
+
+.developers.visible .developerCard {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.developers.visible .developerCard:nth-child(1) { transition-delay: 0.3s; }
+.developers.visible .developerCard:nth-child(2) { transition-delay: 0.4s; }
+.developers.visible .developerCard:nth-child(3) { transition-delay: 0.5s; }
+.developers.visible .developerCard:nth-child(4) { transition-delay: 0.6s; }
+.developers.visible .developerCard:nth-child(5) { transition-delay: 0.7s; }
+.developers.visible .developerCard:nth-child(6) { transition-delay: 0.8s; }
+.developers.visible .developerCard:nth-child(7) { transition-delay: 0.9s; }
+
+/* Section visibility classes - make them initially visible but with children hidden */
+.hero, .features, .about, .developers {
+  opacity: 1; /* Make sections themselves visible */
+  position: relative;
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .hero .heroContent h1,
+  .hero .heroContent p,
+  .hero .heroContent .ctaButton,
+  .hero .heroImageContainer,
+  .features h2,
+  .features .subtitle,
+  .features .featureItem,
+  .about h2,
+  .about .subtitle,
+  .about .aboutText,
+  .about .aboutImageContainer,
+  .developers h2,
+  .developers .subtitle,
+  .developers .developerCard {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+/* Add RTL support for features section */
+:global(html[dir="rtl"]) .features h2,
+:global(html[dir="rtl"]) .about h2,
+:global(html[dir="rtl"]) .developers h2 {
+  font-family: 'Tajawal', 'Arial', sans-serif;
+}
+
+:global(html[dir="rtl"]) .subtitle {
+  font-family: 'Tajawal', 'Arial', sans-serif;
+}
+
+:global(html[dir="rtl"]) .featureItem h3 {
+  font-family: 'Tajawal', 'Arial', sans-serif;
+}
+
+:global(html[dir="rtl"]) .featureItem p {
+  font-family: 'Tajawal', 'Arial', sans-serif;
+}
+
+/* RTL support for about section */
+:global(html[dir="rtl"]) .aboutText {
+  text-align: right;
+}
+
+:global(html[dir="rtl"]) .aboutText p {
+  font-family: 'Tajawal', 'Arial', sans-serif;
+}
+
+/* RTL support for developers section */
+:global(html[dir="rtl"]) .developerName {
+  font-family: 'Tajawal', 'Arial', sans-serif;
+}
+
+:global(html[dir="rtl"]) .developerDescription {
+  font-family: 'Tajawal', 'Arial', sans-serif;
+}
+
+/* Responsive Adjustments for RTL */
+@media (max-width: 768px) {
+  :global(html[dir="rtl"]) .heroContent {
+    text-align: center;
+  }
+  
+  :global(html[dir="rtl"]) .aboutText {
+    text-align: center;
+  }
+}
+
+/* Laptop-specific responsiveness (around 1024px) */
+@media (min-width: 1000px) and (max-width: 1100px) {
+  .hero {
+    padding: 6rem 5% 6rem 5%; /* Adjusted padding for 1024px screens */
+    gap: 3rem; /* Reduced gap between hero content and image */
+  }
+  
+  .hero h1 {
+    font-size: 3rem; /* Slightly smaller heading for 1024px */
+    margin-bottom: 1.2rem;
+  }
+  
+  .hero p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .heroImageContainer {
+    flex-basis: 42%; /* Slightly smaller image area */
+    max-width: 450px;
+  }
+  
+  .ctaButton.large {
+    padding: 0.9rem 2rem;
+    font-size: 0.95rem;
+  }
+  
+  .features,
+  .about,
+  .developers {
+    padding: 6rem 5%; /* Adjusted section padding */
+  }
+  
+  .features h2,
+  .about h2,
+  .developers h2 {
+    font-size: 2.2rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  .subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 3.5rem;
+  }
+  
+  .featureList {
+    gap: 2rem;
+  }
+  
+  .featureItem {
+    padding: 2.2rem;
+  }
+  
+  .aboutContent {
+    gap: 4rem;
+  }
+  
+  .aboutText p {
+    font-size: 1rem;
+  }
+  
+  .developerList {
+    gap: 2rem;
+  }
+  
+  .developerCard {
+    width: 260px;
+    padding: 1.8rem;
+  }
+  
+  /* RTL specific adjustments for 1024px */
+  :global(html[dir="rtl"]) .hero h1 {
+    font-size: 3.1rem; /* Slightly larger for Arabic */
+  }
+  
+  :global(html[dir="rtl"]) .hero p,
+  :global(html[dir="rtl"]) .aboutText p,
+  :global(html[dir="rtl"]) .subtitle {
+    line-height: 1.8; /* Better line height for Arabic text */
+  }
+}
