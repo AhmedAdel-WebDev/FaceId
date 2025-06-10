@@ -61,13 +61,13 @@ A secure voting and election management system that uses facial recognition for 
    npm install
    ```
 
-4. Create a `.env` file in the backend directory with the following variables:
+4. Create a .env file in the backend directory with the following variables:
    ```
-   NODE_ENV=development
-   PORT=5000
-   MONGO_URI=your_mongodb_connection_string
-   JWT_SECRET=your_jwt_secret
-   JWT_EXPIRE=30d
+   NODE_ENV
+   PORT
+   MONGO_URI
+   JWT_SECRET
+   JWT_EXPIRE
    ```
 
 ### Running the Application
